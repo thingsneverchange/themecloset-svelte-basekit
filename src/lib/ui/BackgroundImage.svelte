@@ -1,12 +1,20 @@
 <script type="ts">
-export let width : string = '100%';
-export let height : string = '200';
+export let width : string | number = '100%';
+export let height : string | number = '200';
 export let src : string;
+
+if(typeof width === 'number'){
+    width = width.toString()
+}
+
+if(typeof height === 'number'){
+    height = height.toString()
+}
 </script>
 
 {#if src}
   <div class="backroundImage" style="height: {height.includes('%') ? height : height + 'px'};width: {width.includes('%') ? width : width + 'px'};">
-    <image src="{src}"/>
+    <img src="{src}"/>
   </div>
 {/if}
 
