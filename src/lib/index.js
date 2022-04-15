@@ -1,5 +1,5 @@
 import { store } from './store'
-import { Initialize } from './Initialize'
+import { Initialize } from './Initialize.svelte'
 
 export {
   store,
