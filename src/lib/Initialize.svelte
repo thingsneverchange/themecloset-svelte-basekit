@@ -1,6 +1,6 @@
 <script type="ts">
-import '$lib/assets/css/global.css'
-import '$lib/assets/css/reset.css'
+import './assets/css/global.css'
+import './assets/css/reset.css'
 import { store } from '$lib/store'
 import Notification from '$lib/ui/Notification.svelte'
 </script>
