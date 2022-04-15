@@ -30,6 +30,9 @@
   },
   "type": "module",
   "dependencies": {
-    "svelte2tsx": "^0.5.9"
+    "dayjs": "^1.11.0",
+    "svelte2tsx": "^0.5.9",
+    "vite-plugin-svgr": "^1.1.0",
+    "vite-svg-loader": "^3.2.0"
   }
 }
