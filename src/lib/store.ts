@@ -5,11 +5,13 @@ export interface UiStoreInterface {
   fontSize: number,
   fontSizeUnit: string,
   cdnURL: string
+  baseURL: string
 }
 
 export const store = writable<UiStoreInterface>({
   theme: 'light',
   fontSize: 16,
   fontSizeUnit: 'px',
-  cdnURL: 'https://tcdn.imgix.net/api/'
+  cdnURL: 'https://tcdn.imgix.net/api/',
+  baseURL: ''
 })
