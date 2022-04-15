@@ -1,7 +1,7 @@
 import { store } from './store'
-import { initialize } from './initialize'
+import { Initialize } from './Initialize'
 
 export {
   store,
-  initialize
+  Initialize
 }
