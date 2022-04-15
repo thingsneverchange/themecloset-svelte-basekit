@@ -10,6 +10,7 @@ import Paragraph from './Paragraph.svelte'
 import Select from './Select.svelte'
 import Timeago from './Timeago.svelte'
 import Toggle from './Toggle.svelte'
+import Notification from './Notification.svelte'
 
 export {
   BackgroundImage,
@@ -23,5 +24,6 @@ export {
   Paragraph,
   Select,
   Timeago,
-  Toggle
+  Toggle,
+  Notification
 }
