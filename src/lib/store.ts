@@ -7,7 +7,7 @@ export interface UiStoreInterface {
   cdnURL: string
 }
 
-export const UiStore = writable<UiStoreInterface>({
+export const store = writable<UiStoreInterface>({
   theme: 'light',
   fontSize: 16,
   fontSizeUnit: 'px',

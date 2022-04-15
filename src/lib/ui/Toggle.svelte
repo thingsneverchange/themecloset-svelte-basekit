@@ -1,5 +1,5 @@
 <script type="ts">
-  import { UiStore } from '$lib/store'
+  import { store } from '$lib/store'
 
   export let enabled :boolean = false;
   export let callback: Function = undefined;
@@ -16,7 +16,7 @@
   }
 
 </script>
-<div data-theme="{$UiStore.theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
+<div data-theme="{$store.theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
 
     <div class="toggle_box {enabled ? 'enabled' : ''}">
       <span class="circle"></span>

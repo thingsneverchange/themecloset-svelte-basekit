@@ -1,7 +1,7 @@
 <script type="ts">
-import { UiStore } from '$lib/store'
-import Icon from '$lib/Icon.svelte'
-import Flexbox from '$lib/FlexBox.svelte'
+import { store } from '$lib/store'
+import Icon from '$lib/ui/Icon.svelte'
+import Flexbox from '$lib/ui/FlexBox.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
 
@@ -48,11 +48,11 @@ onMount( () => {
     { withTitle }
   </span>
 {/if}
-<div data-theme="{$UiStore.theme}" class="select {size}">
+<div data-theme="{$store.theme}" class="select {size}">
   <Flexbox on:click="{toggle}" justifyContent="space-between" class="placeholder">
     {placeholder}
     {#key opened}
-      <Icon color="{$UiStore.theme == 'dark' ? '#fff' : '#222'}"
+      <Icon color="{$store.theme == 'dark' ? '#fff' : '#222'}"
             width="{size == 'big' ? 20 : 10}"
             height="{size == 'big' ? 20 : 10}"
             name="{opened ? 'DropdownTop' : 'DropdownBottom'}" />
