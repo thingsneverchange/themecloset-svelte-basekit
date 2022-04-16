@@ -5,15 +5,19 @@ import Flexbox from '$lib/ui/FlexBox.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
 
+interface selectInput{
+  name: string,
+  value: number
+}
 
-export let options : any;
+export let options : selectInput[];
 export let value : number | string;
-export let withTitle : boolean = false;
+export let withTitle : string = '';
 export let placeholder : string = 'Select Option'
 export let size : 'big' | 'normal' | 'small' = 'normal';
 export let chooseFirstDefault: boolean = false
 
-let opened = false;
+let opened : boolean = false;
 
 options = [
   ...options
@@ -21,7 +25,7 @@ options = [
 
 const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
-const changeValue = (val) :void => {
+const changeValue = (val: any) :void => {
   value = val.value
   placeholder = val.name
   change();
@@ -34,7 +38,7 @@ const toggle = () => {
 onMount( () => {
 
   if(options.length > 0 && chooseFirstDefault){
-    if(vlaue == 0 || value == null){
+    if(value == 0 || value == null){
       changeValue(options[0].value)
     }
   }

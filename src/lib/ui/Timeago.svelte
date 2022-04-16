@@ -1,7 +1,8 @@
 <script type="ts">
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime.js'
-dayjs.extend(relativeTime)
+import('dayjs/plugin/relativeTime').then( (d) => {
+  dayjs.extend(d.default)
+})
 
 export let unix : number = 0
 

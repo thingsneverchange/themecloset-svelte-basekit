@@ -5,7 +5,7 @@ import { store } from '$lib/store'
 interface ColorObject {
   r:number, g: number, b: number
 }
-const loadImage = (url: string): HTMLImageElement => {
+const loadImage = (url: string): Promise<HTMLImageElement> => {
   return new Promise(resolve => {
     const image = new Image();
     image.addEventListener('load', () => {

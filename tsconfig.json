@@ -3,5 +3,8 @@
 	"compilerOptions": {
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
-	}
+	},
+	"exclude": [
+		"../src/**/*.js"
+	]
 }

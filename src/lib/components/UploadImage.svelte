@@ -56,9 +56,8 @@
 <div class="uploadFile" on:click={clickedInput}>
 
   <slot />
-  {#if $refers.user.isLogged || publicUpload}
-    <input type="file" on:change={getFile} accept="image/png, image/gif, image/jpeg" />
-  {/if}
+  <input type="file" on:change={getFile} accept="image/png, image/gif, image/jpeg" />
+
 </div>
 <style>
 .uploadFile{position:relative;cursor:pointer;display:inline-block;}

@@ -83,12 +83,12 @@ const click = async () :Promise<void> => {
   if(! showLoading){
     dispatch('click')
 
-    if(hrefURL != ''){
+    if(href != ''){
       if(!blankLink){
-        goto(hrefURL)
+        goto(href)
       }
       if(blankLink){
-        window.open(hrefURL, '_blank')
+        window.open(href, '_blank')
       }
     }
   }

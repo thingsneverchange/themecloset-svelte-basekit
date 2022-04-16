@@ -5,7 +5,7 @@
   export let callback: Function = undefined;
   export let width: number = 60
 
-  let className
+  let className : string = ''
   export { className as class }
   const toggle = () => {
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
     Redactor X
     Version 1.3.6
