@@ -1,7 +1,5 @@
 <script type="ts">
-import Timeago from '$lib/ui/Timeago.svelte'
+import Input from '$lib/ui/Input.svelte'
 </script>
 
-<Timeago>
-asdf
-</Timeago>
+<Input placeholder="Hello"/>

@@ -1,6 +1,7 @@
 <script type="ts">
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte';
+import { store } from '$lib/store'
 
 export let placeholder : string = '';
 export let full : boolean = false;
@@ -51,7 +52,7 @@ const keypress = (event: KeyboardEvent) => {
   </span>
 {/if}
 {#if noInput == false}
-<span class="input {size} {rounded ? 'rounded': ''}">
+<span data-theme="{$store.theme}" class="input {size} {rounded ? 'rounded': ''}">
   {#if !textarea}
     <input
       maxlength="{maxLength}"
@@ -103,4 +104,5 @@ textarea.inp{min-height:80px;}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
 .inp:not(.focus){color:#929292}
+.input[data-theme="light"] .inp{background-color:#efefef;border:1px solid #efefef}
 </style>
