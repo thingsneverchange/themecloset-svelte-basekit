@@ -3,4 +3,4 @@ export let spacing: number = 0
 export let spacingHorizontal: number = 0
 </script>
 
-<div style="margin:{spacing}px {spacingHorizontal}px"></div>
+<div style="width:{spacing}px; height:{spacingHorizontal}px"></div>
