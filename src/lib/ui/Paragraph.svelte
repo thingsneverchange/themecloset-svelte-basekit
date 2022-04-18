@@ -7,6 +7,7 @@ export let faded: boolean = false;
 export let spacing: number = 0
 export let color: string = '#222'
 export let capitalize: boolean = false;
+export let align : string = 'left'
 
 if(as == 'h4') size = size + 6
 if(as == 'h3') size = size + 12
@@ -18,7 +19,7 @@ let fontSize: string = size.toString() + $store.fontSizeUnit
 
 <svelte:element
   this="{as}" class="paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-  style="font-size: {fontSize};margin:{spacing}px 0px;color:{color}">
+  style="font-size: {fontSize};margin:{spacing}px 0px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>
 
