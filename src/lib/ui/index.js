@@ -10,6 +10,7 @@ import Paragraph from './Paragraph.svelte'
 import Select from './Select.svelte'
 import Timeago from './Timeago.svelte'
 import Toggle from './Toggle.svelte'
+import Spacer from './Spacer.svelte'
 import Notification from './Notification.svelte'
 
 export {
@@ -25,5 +26,6 @@ export {
   Select,
   Timeago,
   Toggle,
-  Notification
+  Notification,
+  Spacer
 }
