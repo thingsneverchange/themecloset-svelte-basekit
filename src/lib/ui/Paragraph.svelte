@@ -5,6 +5,7 @@ export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
 export let size : number = $store.fontSize
 export let faded: boolean = false;
 export let spacing: number = 0
+export let spacingHorizontal: number = 0
 export let color: string = '#222'
 export let capitalize: boolean = false;
 export let align : string = 'left'
@@ -19,7 +20,7 @@ let fontSize: string = size.toString() + $store.fontSizeUnit
 
 <svelte:element
   this="{as}" class="paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-  style="font-size: {fontSize};margin:{spacing}px 0px;color:{color};text-align:{align}">
+  style="font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>
 
