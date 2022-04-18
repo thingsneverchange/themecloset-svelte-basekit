@@ -85,7 +85,7 @@ body{
 html,body{overflow-x:hidden}
 
 a{border-bottom:0px;color:inherit;text-decoration:none;}
-a{color:inherit;}
+a{color:inherit;cursor:pointer;}
 img{width:100%}
 
 b{font-weight:600;}

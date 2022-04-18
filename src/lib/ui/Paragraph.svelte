@@ -2,7 +2,7 @@
 
 import { store } from '$lib/store'
 export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
-export let size : string = $store.fontSize.toString()
+export let size : number = $store.fontSize
 export let faded: boolean = false;
 export let spacing: number = 0
 export let capitalize: boolean = false;
@@ -12,7 +12,7 @@ if(as == 'h3') size = size + 12
 if(as == 'h2') size = size + 24
 if(as == 'h1') size = size + 36
 
-let fontSize: string = size + $store.fontSizeUnit
+let fontSize: string = size.toString() + $store.fontSizeUnit
 </script>
 
 <svelte:element
