@@ -6,10 +6,14 @@ export let spacingLeft: number = 0;
 export let spacingRight: number = 0;
 export let spacingBottom: number = 0;
 export let align: string = 'left'
+export let maxWidth: string = 'auto';
+export let center: boolean = false;
 </script>
 
 <div style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
+            {center ? 'margin:auto;' : ''}
+            max-width: {maxWidth};
             {spacingTop != 0 ? 'padding-top:' + spacingTop.toString() + "px;" : ''}
             {spacingLeft != 0 ? 'padding-left:' + spacingLeft.toString() + "px;" : ''}
             {spacingRight != 0 ? 'padding-right:' + spacingRight.toString() + "px;" : ''}
