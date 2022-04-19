@@ -67,7 +67,7 @@ if(rounded){
 }
 
 if(circled){
-  style['border-radius'] = '50%'
+  style['border-radius'] = '500px'
 }
 
 if(faded){
