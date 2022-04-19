@@ -1,4 +1,5 @@
 <script type="ts">
+import { goto } from '$app/navigation'
  export let href : string;
  export let target: target;
 
