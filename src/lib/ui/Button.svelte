@@ -22,6 +22,7 @@ export let size : 'big' | 'small' | 'normal' = 'normal';
 export let showLoading : boolean  = false;
 export let alignLeft : boolean = false
 export let width : number = 0
+export let circled : boolean = false;
 
 const dispatch = createEventDispatcher();
 let style = {
