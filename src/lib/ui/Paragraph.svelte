@@ -9,6 +9,7 @@ export let spacingHorizontal: number = 0
 export let color: string = '#222'
 export let capitalize: boolean = false;
 export let align : string = 'left'
+export let fontFamily: string = 'inherit'
 
 if(as == 'h4') size = size + 6
 if(as == 'h3') size = size + 12
@@ -17,10 +18,9 @@ if(as == 'h1') size = size + 36
 
 let fontSize: string = size.toString() + $store.fontSizeUnit
 </script>
-
 <svelte:element
   this="{as}" class="paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-  style="font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
+  style="font-family:{fontFamily}; font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>
 
