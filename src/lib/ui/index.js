@@ -11,6 +11,7 @@ import Select from './Select.svelte'
 import Timeago from './Timeago.svelte'
 import Toggle from './Toggle.svelte'
 import Spacer from './Spacer.svelte'
+import Wrapper from './Wrapper.svelte'
 import Notification from './Notification.svelte'
 
 export {
@@ -27,5 +28,6 @@ export {
   Timeago,
   Toggle,
   Notification,
-  Spacer
+  Spacer,
+  Wrapper
 }
