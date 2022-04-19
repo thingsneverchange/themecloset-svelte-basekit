@@ -14,6 +14,7 @@ import Spacer from './Spacer.svelte'
 import Wrapper from './Wrapper.svelte'
 import Notification from './Notification.svelte'
 import Link from './Link.svelte'
+import Arrow from './Arrow.svelte'
 
 export {
   BackgroundImage,
@@ -31,5 +32,6 @@ export {
   Notification,
   Spacer,
   Wrapper,
-  Link
+  Link,
+  Arrow
 }
