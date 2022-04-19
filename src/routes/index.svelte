@@ -1,6 +1,7 @@
 <script type="ts">
-import Wrapper from '$lib/ui/Wrapper.svelte'
+import Link from '$lib/ui/Link.svelte'
 </script>
 
-<Wrapper>
-</Wrapper>
+<Link href="sdfasdf">
+  heelo
+</Link>
