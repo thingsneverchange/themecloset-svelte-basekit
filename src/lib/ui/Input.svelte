@@ -16,6 +16,7 @@ export let callback: Function = null;
 export let rounded: boolean = true;
 export let size: 'small' | 'big' = 'big'
 export let required : boolean = false;
+export let backgroundColor : string;
 
 let inputElement : HTMLElement;
 let isFocused: boolean = false;
@@ -65,7 +66,7 @@ const keypress = (event: KeyboardEvent) => {
       on:focus="{toggleFocus}"
       placeholder="{placeholder}"
       class="{spaced ? 'spcaed' : ''} inp {type} {isFocused ? 'focus': ''}"
-      style="{full ? 'width:100%' : ''}"/>
+      style="{backgroundColor ? 'background-color:' + backgroundColor + ';' : ''} {full ? 'width:100%' : ''}"/>
   {:else}
     <textarea
       maxlength="{maxLength}"
@@ -74,7 +75,7 @@ const keypress = (event: KeyboardEvent) => {
       on:change="{change}"
       placeholder="{placeholder}"
       class="{spaced ? 'spcaed' : ''} inp"
-      style="{full ? 'width:100%' : ''}"/>
+      style="{backgroundColor ? 'background-color:' + backgroundColor + ';' : ''} {full ? 'width:100%' : ''}"/>
   {/if}
   {#if type.includes('search')}
     <span class="searchicon" on:click="{click}">
