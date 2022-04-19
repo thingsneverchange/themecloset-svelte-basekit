@@ -12,6 +12,7 @@ export let center: boolean = false;
 
 <div style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
+            width:100%;
             {center ? 'margin:auto;' : ''}
             max-width: {maxWidth};
             {spacingTop != 0 ? 'padding-top:' + spacingTop.toString() + "px;" : ''}
