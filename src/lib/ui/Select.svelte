@@ -75,7 +75,7 @@ onMount( () => {
 
 
 <style>
-.select{width:300px;border-radius:5px;cursor:pointer;  -webkit-touch-callout: none; /* iOS Safari */
+.select{width:100%;border-radius:5px;cursor:pointer;  -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
        -moz-user-select: none; /* Old versions of Firefox */
