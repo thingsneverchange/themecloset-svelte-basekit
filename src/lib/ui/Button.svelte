@@ -21,6 +21,7 @@ export let offsetBottom : number = 0;
 export let size : 'big' | 'small' | 'normal' = 'normal';
 export let showLoading : boolean  = false;
 export let alignLeft : boolean = false
+export let width : number = 0
 
 const dispatch = createEventDispatcher();
 let style = {
@@ -64,8 +65,15 @@ if(rounded){
   style['border-radius'] = '5px'
 }
 
+if(circled){
+  style['border-radius'] = '50%'
+}
+
 if(faded){
   style['opacity'] = '0'
+}
+if(width != 0){
+  style['width'] = width + 'px'
 }
 
 const makeStyle = () => {
@@ -106,7 +114,7 @@ const click = async () :Promise<void> => {
 
 <style>
 *{box-sizing:border-box;margin:0px;padding:0px;}
-.button{display:block;font-size:10pt;font-weight:600;padding:10px 15px;text-decoration:none;border:0px;border-radius:5px;font-family:arial;}
+.button{display:inline-block;font-size:10pt;font-weight:600;padding:10px 15px;text-decoration:none;border:0px;border-radius:5px;font-family:arial;}
 .button.big{padding:15px 25px;font-size:12pt;border-radius:3px;}
 .button.small{padding:6px 9px;font-size:9pt;border-radius:6px;}
 </style>
