@@ -7,6 +7,7 @@ export let fontSize : number = 13;
 export let letterSpacing : number = 0.4;
 export let width : number = 100;
 export let text : string = '';
+export let color: string = '#222';
 export let noAnimation : boolean = false;
 export let backgroundColor : string | undefined = undefined;
 
@@ -20,7 +21,7 @@ onMount( () :void => {
 </script>
 
 {#if text != ''}
-  <div style="background-color:{backgroundColor};width: {width}px; font-size: {fontSize}px; letter-spacing: {letterSpacing}pt">
+  <div style="color:{color};background-color:{backgroundColor};width: {width}px; font-size: {fontSize}px; letter-spacing: {letterSpacing}pt">
     <div class="circleDeco {noAnimation ? '' : 'animation'}" bind:this={circleDecoElement}>
       { text }
     </div>
