@@ -13,6 +13,7 @@ import Toggle from './Toggle.svelte'
 import Spacer from './Spacer.svelte'
 import Wrapper from './Wrapper.svelte'
 import Notification from './Notification.svelte'
+import Link from './Link.svelte'
 
 export {
   BackgroundImage,
@@ -29,5 +30,6 @@ export {
   Toggle,
   Notification,
   Spacer,
-  Wrapper
+  Wrapper,
+  Link
 }
