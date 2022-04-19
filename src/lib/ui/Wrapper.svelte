@@ -8,9 +8,9 @@ export let spacingBottom: number = 0;
 </script>
 
 <div style="padding:{spacingHorizontal}px {spacing}px;
-            {spacingTop != 0 ? 'padding-top:' spacingTop.toString() + "px;" : ''}
-            {spacingLeft != 0 ? 'padding-left:' spacingLeft.toString() + "px;" : ''}
-            {spacingRight != 0 ? 'padding-right:' spacingRight.toString() + "px;" : ''}
-            {spacingBottom != 0 ? 'padding-bottom:' spacingBottom.toString() + "px;" : ''}">
+            {spacingTop != 0 ? 'padding-top:' + spacingTop.toString() + "px;" : ''}
+            {spacingLeft != 0 ? 'padding-left:' + spacingLeft.toString() + "px;" : ''}
+            {spacingRight != 0 ? 'padding-right:' + spacingRight.toString() + "px;" : ''}
+            {spacingBottom != 0 ? 'padding-bottom:' + spacingBottom.toString() + "px;" : ''}">
   <slot />
 </div>

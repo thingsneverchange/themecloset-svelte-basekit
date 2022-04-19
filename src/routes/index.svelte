@@ -1,5 +1,6 @@
 <script type="ts">
-import Input from '$lib/ui/Input.svelte'
+import Wrapper from '$lib/ui/Wrapper.svelte'
 </script>
 
-<Input placeholder="Hello"/>
+<Wrapper>
+</Wrapper>
