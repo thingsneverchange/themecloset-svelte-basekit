@@ -103,7 +103,7 @@ onMount( () => {
 .select .placeholder{width:calc(100% - 20px);padding:10px 15px;}
 .select .arrow{padding-right:10px;}
 .select::selection, .select *::selection { background: transparent;color:inherit}
-.select{font-size:11pt;position:relative;border-radius:3px;cursor:pointer}
+.select{background-color:#fff;color:#222;font-size:11pt;position:relative;border-radius:3px;cursor:pointer}
 .select .title{display:flex;justify-content: space-between;align-items:center;}
 .select .options{top:35px;position:absolute;left:0px;width:100%;background-color:#fff;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;}
 .select .options .option{padding:5px 0px;width:100%;}
