@@ -97,7 +97,8 @@ textarea.inp{min-height:80px;}
 .inp{transition:background-color 0.3s linear}
 .inp{background-color:#3f3f3f;border:0px;padding:15px 20px;font-size:11pt;outline: none;color:inherit;}
 .rounded .inp{border-radius:5px;}
-.inp:focus{background-color:#5a5a5a}
+.inp{opacity:0.8}
+.inp:focus{opacity:1}
 .input_title{opacity:0.6;font-weight:600;padding:10px 6px;font-size:8pt;display:block;}
 .inp.search{padding:6px 10px;font-size:10pt;background-color:transparent;border:1px solid #fff}
 .inp.search::placeholder{color:#fff}
