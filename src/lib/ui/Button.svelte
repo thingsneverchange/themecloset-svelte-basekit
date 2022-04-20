@@ -1,4 +1,5 @@
 <script type="ts">
+import { store } from '$lib/store'
 import { createEventDispatcher } from 'svelte';
 import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
@@ -33,11 +34,11 @@ let style = {
   'text-align': alignLeft ? 'left' : 'center'
 }
 
-if(theme == 'dark'){
+if($store.theme == 'dark'){
   style['color'] = '#fff'
   style['background-color'] = '#222'
 }
-if(theme == 'light'){
+if($store.theme == 'light'){
   style['color'] = '#222'
   style['background-color'] = '#efefef'
 }
@@ -89,7 +90,6 @@ afterNavigate((navigaton) => {
 
 const click = async (event: ClickEvent) :Promise<void> => {
 
-  event.preventDefault()
   if(! showLoading){
     dispatch('click')
 
