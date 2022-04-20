@@ -25,7 +25,7 @@ const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
 
 if(value != null){
-  console.log(find(options, {'value': value}))
+  placeholderInternal = find(options, {'value': value}).name
 }
 
 const changeValue = (val: any) :void => {
@@ -108,7 +108,7 @@ onMount( () => {
 .select::selection, .select *::selection { background: transparent;color:inherit}
 .select{font-size:11pt;position:relative;border-radius:3px;cursor:pointer;font-size:10pt;border:1px solid #222;}
 .select .title{display:flex;justify-content: space-between;align-items:center;}
-.select .options{top:35px;position:absolute;left:-1px;width:calc(100% + 2px);border: 1px solid #222;border-top:0px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;}
+.select .options{width:calc(100% + 2px);border: 1px solid #222;border-top:0px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:0px 14px;padding-bottom:10px;}
 .select .options .option{padding:5px 0px;width:100%;}
 .select .options .option:first-child{padding-top:0px;}
 .select .options .option:last-child{padding-bottom:0px;}

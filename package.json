@@ -36,6 +36,7 @@
     "circletype": "^2.3.0",
     "dayjs": "^1.11.0",
     "js-cookie": "^3.0.1",
+    "lodash-es": "^4.17.21",
     "svelte2tsx": "^0.5.9",
     "vite-plugin-svgr": "^1.1.0",
     "vite-svg-loader": "^3.2.0"

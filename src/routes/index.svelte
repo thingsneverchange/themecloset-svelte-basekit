@@ -1,8 +1,8 @@
 <script>
 import Initialize from '$lib/Initialize.svelte'
-import Text from '$lib/ui/test.svelte'
+import Select from '$lib/ui/Select.svelte'
 
 </script>
-
-<Text price="{4213}" />
-adsf
+<Initialize>
+<Select options="{[{name: 1, value: 1}, {name: 2, value: 2}]}" value="{1}" />
+</Initialize>
