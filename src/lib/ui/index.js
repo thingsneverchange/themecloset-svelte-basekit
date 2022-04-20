@@ -14,7 +14,6 @@ import Spacer from './Spacer.svelte'
 import Wrapper from './Wrapper.svelte'
 import Link from './Link.svelte'
 import Arrow from './Arrow.svelte'
-import Initialize from './Initialize.svelte'
 
 export {
   BackgroundImage,
@@ -32,6 +31,5 @@ export {
   Spacer,
   Wrapper,
   Link,
-  Arrow,
-  Initialize
+  Arrow
 }
