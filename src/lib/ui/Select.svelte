@@ -84,7 +84,7 @@ onMount( () => {
     </div>
   </div>
 
-  {#if opened && options}
+  {#if opened && options && options.length != 0}
     <div class="options">
       {#each options as option}
         <div class="option" on:click="{(() => {
