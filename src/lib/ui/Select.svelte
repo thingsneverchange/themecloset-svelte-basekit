@@ -1,7 +1,6 @@
 <script type="ts">
 import { store } from '$lib/store'
 import Icon from '$lib/ui/Icon.svelte'
-import Flexbox from '$lib/ui/FlexBox.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
 
@@ -72,13 +71,13 @@ onMount( () => {
     </div>
     <div class="arrow" on:click="{close}">
       {#if value}
-        <Icon name="close" width="10" height="10" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+        <Icon name="close" width="{10}" height="{10}" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
       {:else}
         {#if opened}
-          <Icon name="DropdownTop" width="12" height="12" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownTop" width="{12}" height="{12}" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
         {/if}
         {#if opened == false}
-          <Icon name="DropdownBottom" width="12" height="12" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownBottom" width="{12}" height="{12}" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
         {/if}
       {/if}
     </div>
@@ -103,7 +102,7 @@ onMount( () => {
 .select .placeholder{width:calc(100% - 20px);padding:10px 15px;}
 .select .arrow{padding-right:10px;}
 .select::selection, .select *::selection { background: transparent;color:inherit}
-.select{background-color:#fff;color:#222;font-size:11pt;position:relative;border-radius:3px;cursor:pointer}
+.select{background-color:#fff;color:#222;font-size:11pt;position:relative;border-radius:3px;cursor:pointer;font-size:10pt;}
 .select .title{display:flex;justify-content: space-between;align-items:center;}
 .select .options{top:35px;position:absolute;left:0px;width:100%;background-color:#fff;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;}
 .select .options .option{padding:5px 0px;width:100%;}

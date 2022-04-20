@@ -24,7 +24,7 @@ $: $store.notification.show, normalizeNotification()
       <p>{$store.notification.text}</p>
     </div>
     <div class="close">
-      <Icon name="Clock" width="11" height="11" color="{$store.theme == 'light' ? '#222' : '#fff'}" />
+      <Icon name="Clock" width="{11}" height="{11}" color="{$store.theme == 'light' ? '#222' : '#fff'}" />
     </div>
   </div>
 </div>
