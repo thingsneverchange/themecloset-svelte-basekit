@@ -35,7 +35,7 @@
 .checkbox_container.big .checkbox{width:18px;height:18px;}
 .checkbox_container .checkbox{margin-right:10px;}
 .checked{background-color:#aeaeae;width:100%;height:100%;display:block;border-radius:10px}
-.checkbox{padding:5px;}
+.checkbox{padding:3px;}
 .checkbox_container *{line-height:130%}
 :global(.theme-light .checkbox_container .checkbox){background-color:#e2e2e2;border:1px solid #efefef;color:#222}
 </style>

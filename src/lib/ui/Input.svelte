@@ -102,6 +102,6 @@ textarea.inp{min-height:80px;}
 .inp.search{padding:6px 10px;font-size:10pt;background-color:transparent;border:1px solid #fff}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
-.inp:not(.focus){color:#929292}
-:global(.theme-light .input[data-theme="light"] .inpt){background-color:#fff;border:1px solid #efefef}
+.inp{color:#fff}
+:global(.theme-light .input[data-theme="light"] .inpt){background-color:#fff;border:1px solid #efefef;color:#222}
 </style>
