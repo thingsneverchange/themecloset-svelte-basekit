@@ -101,12 +101,14 @@ onMount( () => {
 .select .placeholder{width:calc(100% - 20px);padding:10px 15px;}
 .select .arrow{padding-right:10px;}
 .select::selection, .select *::selection { background: transparent;color:inherit}
-.select{background-color:#fff;color:#222;font-size:11pt;position:relative;border-radius:3px;cursor:pointer;font-size:10pt;border:1px solid #222;}
+.select{font-size:11pt;position:relative;border-radius:3px;cursor:pointer;font-size:10pt;border:1px solid #222;}
 .select .title{display:flex;justify-content: space-between;align-items:center;}
-.select .options{top:35px;position:absolute;left:-1px;width:calc(100% + 2px);border: 1px solid #222;border-top:0px;background-color:#fff;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;}
+.select .options{top:35px;position:absolute;left:-1px;width:calc(100% + 2px);border: 1px solid #222;border-top:0px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;}
 .select .options .option{padding:5px 0px;width:100%;}
 .select .options .option:first-child{padding-top:0px;}
 .select .options .option:last-child{padding-bottom:0px;}
+
+:global(.theme-light .select .options, .theme-light .select){background-color:#fff;color:#222;}
 :global(.theme-dark .select .options){background-color:#222;}
 :global(.theme-dark .select .arrow svg){fill:#fff !important;}
 :global(.theme-dark .select){background-color:#222;color:#fff;}
