@@ -107,8 +107,8 @@ onMount( () => {
 .select .options .option{padding:5px 0px;width:100%;}
 .select .options .option:first-child{padding-top:0px;}
 .select .options .option:last-child{padding-bottom:0px;}
-:global(.select .options){background-color:#222;}
-:global(.select .arrow svg){fill:#fff !important;}
-:global(.select){background-color:#222;color:#fff;}
+:global(.theme-dark .select .options){background-color:#222;}
+:global(.theme-dark .select .arrow svg){fill:#fff !important;}
+:global(.theme-dark .select){background-color:#222;color:#fff;}
 select{width:0px;height:0px;position:absolute;top:0px;left:0px;}
 </style>
