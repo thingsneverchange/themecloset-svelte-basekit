@@ -32,5 +32,5 @@ export const scan = () : UiStoreInterface => {
   return getValue(store)
 }
 export const update = (newValue) => {
-  store.set({...value(), ...newValue})
+  store.set({...scan(), ...newValue})
 }
