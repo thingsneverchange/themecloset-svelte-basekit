@@ -1,5 +1,5 @@
 <script type="ts">
-import { store } from '$lib/store'
+import { store } from '$lib/ui/store'
 import { createEventDispatcher } from 'svelte';
 import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
