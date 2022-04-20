@@ -16,7 +16,6 @@ const normalizeNotification = () => {
 $: $store.notification.show, normalizeNotification()
 </script>
 
-{#if $store.notification.show}
 <div class="notification {$store.theme}">
   <div class="notification_content">
     <div class="head">
@@ -28,7 +27,6 @@ $: $store.notification.show, normalizeNotification()
     </div>
   </div>
 </div>
-{/if}
 <style>
 
 @keyframes slowDown {
