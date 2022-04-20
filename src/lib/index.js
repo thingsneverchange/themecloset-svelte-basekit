@@ -1,4 +1,4 @@
-import { scan, update } from './store'
+import store from './store'
 import Initialize from './Initialize.svelte'
 
 export {
