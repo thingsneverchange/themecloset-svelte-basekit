@@ -12,12 +12,11 @@ interface selectInput{
 
 export let options : selectInput[];
 export let value : number | string;
-export let withTitle : string = '';
 export let placeholder : string = 'Select Option'
-export let size : 'big' | 'normal' | 'small' = 'normal';
 export let chooseFirstDefault: boolean = false
 
 let opened : boolean = false;
+let placeholderInternal = placeholder
 
 options = [
   ...options
@@ -25,14 +24,24 @@ options = [
 
 const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
+
 const changeValue = (val: any) :void => {
   value = val.value
-  placeholder = val.name
+  placeholderInternal = val.name
+  toggle();
   change();
 }
 const toggle = () => {
   dispatch('click');
   opened = opened ? false : true
+}
+const close = () => {
+  if(value){
+    opened = false
+    value = undefined;
+    placeholderInternal = placeholder
+
+  }
 }
 
 onMount( () => {
@@ -47,49 +56,62 @@ onMount( () => {
 
 </script>
 
-{#if withTitle != ''}
-  <span class="input_title">
-    { withTitle }
-  </span>
-{/if}
-<div data-theme="{$store.theme}" class="select {size}">
-  <Flexbox on:click="{toggle}" justifyContent="space-between" class="placeholder">
-    {placeholder}
-    {#key opened}
-      <Icon color="{$store.theme == 'dark' ? '#fff' : '#222'}"
-            width="{size == 'big' ? 20 : 10}"
-            height="{size == 'big' ? 20 : 10}"
-            name="{opened ? 'DropdownTop' : 'DropdownBottom'}" />
-    {/key}
-  </Flexbox>
+<select>
+  {#each options as option}
+    <option value="{option.value}">
+      {option.name}
+    </option>
+  {/each}
+</select>
+
+<div class="select disabledSelection" data-theme="{$store.theme}">
+
+  <div class="title">
+    <div class="placeholder" on:click="{toggle}">
+      {placeholderInternal}
+    </div>
+    <div class="arrow" on:click="{close}">
+      {#if value}
+        <Icon name="close" width="10" height="10" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+      {:else}
+        {#if opened}
+          <Icon name="DropdownTop" width="12" height="12" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+        {/if}
+        {#if opened == false}
+          <Icon name="DropdownBottom" width="12" height="12" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+        {/if}
+      {/if}
+    </div>
+  </div>
+
   {#if opened}
-    <ol>
+    <div class="options">
       {#each options as option}
-        <li on:click="{(() => {
-          changeValue(option); toggle();
-        })}">{option.name}</li>
+        <div class="option" on:click="{(() => {
+          changeValue(option)
+        })}">
+          {option.name}
+        </div>
       {/each}
-    </ol>
+    </div>
   {/if}
+
 </div>
 
-
 <style>
-.select{width:100%;border-radius:5px;cursor:pointer;  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-.select{background-color:#222;font-size:11pt;padding:15px;color:#fff;font-family:arial}
-.select[data-theme="light"]{background-color:#fff;border:1px solid #efefef;color:#222}
-.select.small{padding:10px;font-size:10pt;}
-.select.big{padding:20px;font-size:16pt;}
-*{margin:0px;padding:0px;}
-ol,li{list-style:none;margin:0px;}
-ol li{margin:12px 0px;}
-ol li:last-child{margin-bottom:0px;}
-.input_title{opacity:0.6;font-weight:600;padding:10px 12px;font-size:8pt;display:block;}
+*{box-sizing: border-box}
+.select .placeholder{width:calc(100% - 20px);padding:10px 15px;}
+.select .arrow{padding-right:10px;}
+.select::selection, .select *::selection { background: transparent;color:inherit}
+.select{font-size:11pt;position:relative;border-radius:3px;cursor:pointer}
+.select .title{display:flex;justify-content: space-between;align-items:center;}
+.select .options{top:35px;position:absolute;left:0px;width:100%;background-color:#fff;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;}
+.select .options .option{padding:5px 0px;width:100%;}
+.select .options .option:first-child{padding-top:0px;}
+.select .options .option:last-child{padding-bottom:0px;}
+.select[data-theme="dark"]{background-color:#222;color:#fff;}
+.select[data-theme="dark"] .options{background-color:#222;}
+.select[data-theme="light"] .options{border:1px solid #efefef;}
+.select[data-theme="light"]{border:1px solid #efefef;}
+select{width:0px;height:0px;position:absolute;top:0px;left:0px;}
 </style>
