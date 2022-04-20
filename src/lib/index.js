@@ -1,7 +1,8 @@
-import store from './store'
+import { scan, update } from './store'
 import Initialize from './Initialize.svelte'
 
 export {
-  store,
+  scan as ScanStore,
+  update as UpdateStore,
   Initialize
 }
