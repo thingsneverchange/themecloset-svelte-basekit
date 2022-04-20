@@ -2,8 +2,7 @@
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte';
 
-import { store } from '$lib/interface'
-
+import { value } from '$lib/interface'
 export let placeholder : string = '';
 export let full : boolean = false;
 export let textarea : boolean = false;
@@ -54,7 +53,7 @@ const keypress = (event: KeyboardEvent) => {
   </span>
 {/if}
 {#if noInput == false}
-<span data-theme="{store.data.theme}" class="input {size} {rounded ? 'rounded': ''}">
+<span data-theme="{value().theme}" class="input {size} {rounded ? 'rounded': ''}">
   {#if !textarea}
     <input
       maxlength="{maxLength}"

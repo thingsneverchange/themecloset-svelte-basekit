@@ -1,15 +1,36 @@
-import State from 'deep-state-observer'; // const State = require('deep-state-observer');
-
-export const store = new State({
-  theme: 'light',
-  fontSize: 16,
-  fontSizeUnit: 'px',
-  cdnURL: 'https://tcdn.imgix.net/api/',
-  baseURL: '',
-  fontFamily: 'arial',
+import { createStore, getValue } from '@logux/state'
+export interface UiStoreInterface {
+  theme: 'dark' | 'light',
+  fontSize: number,
+  fontSizeUnit: string,
+  cdnURL: string
+  baseURL: string,
+  fontFamily: string,
   notification: {
-    text: '',
-    title: 'New message',
-    show: false
+    text: string,
+    title: string,
+    show: boolean
   }
+}
+const store = createStore<UiStoreInterface>(() : void => {
+  store.set({
+    theme: 'light',
+    fontSize: 16,
+    fontSizeUnit: 'px',
+    cdnURL: 'https://tcdn.imgix.net/api/',
+    baseURL: '',
+    fontFamily: 'arial',
+    notification: {
+      text: '',
+      title: 'New message',
+      show: false
+    }
+  })
 });
+
+export const value = () : UiStoreInterface => {
+  return getValue(store)
+}
+export const update = (newValue) => {
+  store.set({...value(), ...newValue})
+}
