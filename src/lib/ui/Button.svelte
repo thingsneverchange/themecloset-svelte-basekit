@@ -1,8 +1,8 @@
-<script type="ts">
+scan()<script type="ts">
 import { createEventDispatcher } from 'svelte';
 import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
-import { value } from '$lib/interface'
+import { scan } from '$lib/interface'
 
 export let href : string = '#';
 export let color : string = '';
@@ -33,11 +33,11 @@ let style = {
   'text-align': alignLeft ? 'left' : 'center'
 }
 
-if(value().theme == 'dark'){
+if(scan().theme == 'dark'){
   style['color'] = '#fff'
   style['background-color'] = '#222'
 }
-if(value().theme == 'light'){
+if(scan().theme == 'light'){
   style['color'] = '#222'
   style['background-color'] = '#efefef'
 }

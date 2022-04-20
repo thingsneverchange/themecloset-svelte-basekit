@@ -1,5 +1,5 @@
 <script type="ts">
-import { value } from '$lib/interface'
+import { scan } from '$lib/interface'
 
   export let enabled :boolean = false;
   export let callback: Function = undefined;
@@ -16,7 +16,7 @@ import { value } from '$lib/interface'
   }
 
 </script>
-<div data-theme="{value().theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
+<div data-theme="{scan().theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
 
     <div class="toggle_box {enabled ? 'enabled' : ''}">
       <span class="circle"></span>

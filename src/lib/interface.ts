@@ -28,7 +28,7 @@ const store = createStore<UiStoreInterface>(() : void => {
   })
 });
 
-export const value = () : UiStoreInterface => {
+export const scan = () : UiStoreInterface => {
   return getValue(store)
 }
 export const update = (newValue) => {
