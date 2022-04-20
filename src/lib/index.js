@@ -1,5 +1,5 @@
-import Initialize from './Initialize.svelte'
-import { store } from './store'
+import Initialize from '$lib/Initialize.svelte'
+import { store } from '$lib/store'
 
 export {
   store,
