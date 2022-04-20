@@ -1,5 +1,5 @@
 <script type="ts">
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
   import { createEventDispatcher } from 'svelte';
 
   export let checked : boolean = false;

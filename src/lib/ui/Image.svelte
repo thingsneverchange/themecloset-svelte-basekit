@@ -1,6 +1,6 @@
 <script type="ts">
 import { onMount } from 'svelte'
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
 
 interface ColorObject {
   r:number, g: number, b: number

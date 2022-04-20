@@ -1,8 +1,8 @@
-scan()<script type="ts">
+<script type="ts">
 import { createEventDispatcher } from 'svelte';
 import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
 
 export let href : string = '#';
 export let color : string = '';

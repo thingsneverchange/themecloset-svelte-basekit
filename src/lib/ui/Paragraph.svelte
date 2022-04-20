@@ -1,6 +1,6 @@
 <script type="ts">
 
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
 export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
 export let size : number = $store.fontSize
 export let faded: boolean = false;

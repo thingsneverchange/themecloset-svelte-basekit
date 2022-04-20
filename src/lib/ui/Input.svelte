@@ -2,7 +2,7 @@
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte';
 
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
 export let placeholder : string = '';
 export let full : boolean = false;
 export let textarea : boolean = false;

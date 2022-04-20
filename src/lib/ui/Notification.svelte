@@ -1,5 +1,5 @@
 <script>
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
 import Icon from '$lib/ui/Icon.svelte'
 
 const normalizeNotification = () => {

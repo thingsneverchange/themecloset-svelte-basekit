@@ -1,5 +1,5 @@
 <script type="ts">
-import { scan } from '$lib/interface'
+import { scan } from '$lib/store'
 import Icon from '$lib/ui/Icon.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
