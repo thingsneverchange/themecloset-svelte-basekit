@@ -1,14 +1,15 @@
 <script>
-import { scan } from '$lib/store'
+import { scan, update } from '$lib/store'
 import Icon from '$lib/ui/Icon.svelte'
 
 const normalizeNotification = () => {
   setTimeout( () => {
     if(scan().notification.show){
-      store.update((data) => {
-        data.notification.show = false
-        data.notification.text = ''
-        return data
+      update({
+        notification: {
+          text: '',
+          show: false
+        }
       })
     }
   }, 3500)
