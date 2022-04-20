@@ -11,6 +11,7 @@ export let capitalize: boolean = false;
 export let align : string = 'left'
 export let fontFamily: string = 'inherit'
 
+size = parseInt(size)
 if(as == 'h4') size = size + 6
 if(as == 'h3') size = size + 12
 if(as == 'h2') size = size + 24
