@@ -111,7 +111,5 @@ onMount( () => {
 .select .options .option:last-child{padding-bottom:0px;}
 .select[data-theme="dark"]{background-color:#222;color:#fff;}
 .select[data-theme="dark"] .options{background-color:#222;}
-.select[data-theme="light"] .options{border:1px solid #efefef;}
-.select[data-theme="light"]{border:1px solid #efefef;}
 select{width:0px;height:0px;position:absolute;top:0px;left:0px;}
 </style>
