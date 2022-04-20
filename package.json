@@ -1,6 +1,6 @@
 {
   "name": "@themecloset/svelte-basekit",
-  "version": "0.0.58",
+  "version": "0.0.59",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
