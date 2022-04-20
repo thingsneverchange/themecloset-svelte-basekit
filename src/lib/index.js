@@ -1,4 +1,4 @@
-import store from './store'
+import * as store from './store'
 import Initialize from './Initialize.svelte'
 
 export {
