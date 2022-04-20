@@ -1,5 +1,5 @@
 <script type="ts">
-import { store } from '$lib/store'
+import { store } from '$lib/interface'
 import Icon from '$lib/ui/Icon.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
@@ -63,7 +63,7 @@ onMount( () => {
   {/each}
 </select>
 
-<div class="select disabledSelection" data-theme="{$store.theme}">
+<div class="select disabledSelection" data-theme="{store.data.theme}">
 
   <div class="title">
     <div class="placeholder" on:click="{toggle}">
@@ -71,13 +71,13 @@ onMount( () => {
     </div>
     <div class="arrow" on:click="{close}">
       {#if value}
-        <Icon name="close" width="{10}" height="{10}" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+        <Icon name="close" width="{10}" height="{10}" color="{store.data.theme == 'dark' ? '#fff' : '#222'}" />
       {:else}
         {#if opened}
-          <Icon name="DropdownTop" width="{12}" height="{12}" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownTop" width="{12}" height="{12}" color="{store.data.theme == 'dark' ? '#fff' : '#222'}" />
         {/if}
         {#if opened == false}
-          <Icon name="DropdownBottom" width="{12}" height="{12}" color="{$store.theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownBottom" width="{12}" height="{12}" color="{store.data.theme == 'dark' ? '#fff' : '#222'}" />
         {/if}
       {/if}
     </div>

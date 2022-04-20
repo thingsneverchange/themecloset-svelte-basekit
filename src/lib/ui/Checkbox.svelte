@@ -1,5 +1,5 @@
 <script type="ts">
-  import { store } from '$lib/store'
+import { store } from '$lib/interface'
   import { createEventDispatcher } from 'svelte';
 
   export let checked : boolean = false;
@@ -13,7 +13,7 @@
   const dispatch = createEventDispatcher();
 
 </script>
-<div data-theme="{$store.theme}" class="checkbox_container selectionDisabled {size}" on:click="{toggle}">
+<div data-theme="{store.data.theme}" class="checkbox_container selectionDisabled {size}" on:click="{toggle}">
   <span class="checkbox">
     {#if checked}
       <span class="checked"></span>

@@ -1,10 +1,10 @@
 <script>
-import { store } from '$lib/store'
+import { store } from '$lib/interface'
 import Icon from '$lib/ui/Icon.svelte'
 
 const normalizeNotification = () => {
   setTimeout( () => {
-    if($store.notification.show){
+    if(store.data.notification.show){
       store.update((data) => {
         data.notification.show = false
         data.notification.text = ''
@@ -13,17 +13,17 @@ const normalizeNotification = () => {
     }
   }, 3500)
 }
-$: $store.notification.show, normalizeNotification()
+$: store.data.notification.show, normalizeNotification()
 </script>
 
-<div class="notification {$store.theme}">
+<div class="notification {store.data.theme}">
   <div class="notification_content">
     <div class="head">
-      <h4>{$store.notification.title}</h4>
-      <p>{$store.notification.text}</p>
+      <h4>{store.data.notification.title}</h4>
+      <p>{store.data.notification.text}</p>
     </div>
     <div class="close">
-      <Icon name="Clock" width="{11}" height="{11}" color="{$store.theme == 'light' ? '#222' : '#fff'}" />
+      <Icon name="Clock" width="{11}" height="{11}" color="{store.data.theme == 'light' ? '#222' : '#fff'}" />
     </div>
   </div>
 </div>
