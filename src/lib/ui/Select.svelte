@@ -2,6 +2,7 @@
 import Icon from '$lib/ui/Icon.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
+import { find } from 'lodash-es'
 
 interface selectInput{
   name: string,
@@ -22,6 +23,10 @@ options = [
 
 const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
+
+if(value != null){
+  placeholder = find(options, {value: value}).name
+}
 
 const changeValue = (val: any) :void => {
   value = val.value
