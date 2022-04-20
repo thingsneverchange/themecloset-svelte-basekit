@@ -67,7 +67,7 @@ onMount( () => {
   {/each}
 </select>
 
-<div class="select disabledSelection">
+<div class="select disabledSelection" style="opacity:{options.length == 0 ? '0.5' : '1'}">
 
   <div class="title">
     <div class="placeholder" on:click="{toggle}">
