@@ -15,7 +15,7 @@ import Wrapper from './Wrapper.svelte'
 import Link from './Link.svelte'
 import Arrow from './Arrow.svelte'
 import Initialize from './Initialize.svelte'
-import { store } from './store'
+import { store } from '$lib/ui/store'
 
 export {
   BackgroundImage,
@@ -35,5 +35,5 @@ export {
   Link,
   Arrow,
   Initialize,
-  store 
+  store
 }
