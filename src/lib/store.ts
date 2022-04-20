@@ -28,7 +28,7 @@ export const store = writable<UiStoreInterface>({
   }
 })
 
-export const update = (newStore) : void => {
+export const update = ($store, newStore) : void => {
   store.set({...{}, ...$store, ...newStore})
   store.update(() => {
     return {...{}, ...$store, ...newStore}
