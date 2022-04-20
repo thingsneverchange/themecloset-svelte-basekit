@@ -3,6 +3,7 @@ import { scan, update } from '$lib/store'
 import Icon from '$lib/ui/Icon.svelte'
 
 const normalizeNotification = () => {
+  console.log('asdf')
   setTimeout( () => {
     if(scan().notification.show){
       update({
