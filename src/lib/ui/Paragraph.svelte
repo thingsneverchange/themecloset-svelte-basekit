@@ -2,7 +2,7 @@
 
 import { scan } from '$lib/store'
 export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
-export let size : number = $store.fontSize
+export let size : number = scan().fontSize
 export let faded: boolean = false;
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
