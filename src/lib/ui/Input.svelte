@@ -103,5 +103,5 @@ textarea.inp{min-height:80px;}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
 .inp{color:#fff}
-:global(.theme-light .input[data-theme="light"] .inpt){background-color:#fff;border:1px solid #efefef;color:#222}
+:global(.theme-light .input .inpt){background-color:#fff;border:1px solid #efefef;color:#222}
 </style>
