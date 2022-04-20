@@ -27,3 +27,11 @@ export const store = writable<UiStoreInterface>({
     show: false
   }
 })
+
+export const update = (newStore) : void => {
+  store.update((data) => {
+    data = newStore
+    return data
+  })
+  store.set(newStore)
+}
