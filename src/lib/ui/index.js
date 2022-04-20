@@ -35,5 +35,5 @@ export {
   Link,
   Arrow,
   Initialize,
-  store
+  store 
 }
