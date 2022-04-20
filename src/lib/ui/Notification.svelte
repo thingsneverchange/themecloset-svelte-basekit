@@ -6,11 +6,10 @@ const normalizeNotification = () => {
 
   setTimeout( () => {
     if($store.notification.show){
-      store.update({
-        notification: {
-          text: '',
-          show: false
-        }
+      store.update((data) => {
+        data.notification.text = ''
+        data.notification.show = false
+        return data
       })
     }
   }, 3500)
