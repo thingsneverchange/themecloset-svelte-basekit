@@ -2,9 +2,9 @@
 import { createEventDispatcher } from 'svelte';
 import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
-import { scan } from '$lib/store'
 
 export let href : string = '#';
+export let theme : string = 'light'
 export let color : string = '';
 export let backgroundColor : string = '';
 export let active : boolean = false;
@@ -33,11 +33,11 @@ let style = {
   'text-align': alignLeft ? 'left' : 'center'
 }
 
-if(scan().theme == 'dark'){
+if(theme == 'dark'){
   style['color'] = '#fff'
   style['background-color'] = '#222'
 }
-if(scan().theme == 'light'){
+if(theme == 'light'){
   style['color'] = '#222'
   style['background-color'] = '#efefef'
 }
@@ -106,7 +106,7 @@ const click = async (event: ClickEvent) :Promise<void> => {
 };
 </script>
 
-<a style="{makeStyle()}" data-theme="{scan().theme}" class="button {size}" href="{href}" on:click="{click}">
+<a style="{makeStyle()}" data-theme="{theme}" class="button {size}" href="{href}" on:click="{click}">
   {#if showLoading}
     <Loading size="{13}"/>
   {:else}

@@ -1,8 +1,7 @@
 <script type="ts">
 
-import { scan } from '$lib/store'
 export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
-export let size : number = scan().fontSize
+export let size : number = 10
 export let faded: boolean = false;
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
@@ -17,7 +16,7 @@ if(as == 'h3') size = size + 12
 if(as == 'h2') size = size + 24
 if(as == 'h1') size = size + 36
 
-let fontSize: string = size.toString() + scan().fontSizeUnit
+let fontSize: string = size.toString() + 'px'
 </script>
 <svelte:element
   this="{as}" class="paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"

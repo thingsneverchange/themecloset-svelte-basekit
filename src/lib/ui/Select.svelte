@@ -1,5 +1,4 @@
 <script type="ts">
-import { scan } from '$lib/store'
 import Icon from '$lib/ui/Icon.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
@@ -13,6 +12,7 @@ export let options : selectInput[];
 export let value : number | string;
 export let placeholder : string = 'Select Option'
 export let chooseFirstDefault: boolean = false
+export let theme : string = 'light'
 
 let opened : boolean = false;
 let placeholderInternal = placeholder
@@ -63,7 +63,7 @@ onMount( () => {
   {/each}
 </select>
 
-<div class="select disabledSelection" data-theme="{scan().theme}">
+<div class="select disabledSelection" data-theme="{theme}">
 
   <div class="title">
     <div class="placeholder" on:click="{toggle}">
@@ -71,13 +71,13 @@ onMount( () => {
     </div>
     <div class="arrow" on:click="{close}">
       {#if value}
-        <Icon name="close" width="{10}" height="{10}" color="{scan().theme == 'dark' ? '#fff' : '#222'}" />
+        <Icon name="close" width="{10}" height="{10}" color="{theme == 'dark' ? '#fff' : '#222'}" />
       {:else}
         {#if opened}
-          <Icon name="DropdownTop" width="{12}" height="{12}" color="{scan().theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownTop" width="{12}" height="{12}" color="{theme == 'dark' ? '#fff' : '#222'}" />
         {/if}
         {#if opened == false}
-          <Icon name="DropdownBottom" width="{12}" height="{12}" color="{scan().theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownBottom" width="{12}" height="{12}" color="{theme == 'dark' ? '#fff' : '#222'}" />
         {/if}
       {/if}
     </div>

@@ -1,8 +1,6 @@
 <script type="ts">
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte';
-
-import { scan } from '$lib/store'
 export let placeholder : string = '';
 export let full : boolean = false;
 export let textarea : boolean = false;
@@ -11,6 +9,7 @@ export let value : string = '';
 export let type: 'email' | 'text' | 'password' | 'number' = 'text';
 export let spaced: boolean = false;
 export let withTitle: string = null;
+export let theme : string = 'light'
 export let noInput: boolean = false;
 export let callback: Function = null;
 export let rounded: boolean = true;
@@ -53,7 +52,7 @@ const keypress = (event: KeyboardEvent) => {
   </span>
 {/if}
 {#if noInput == false}
-<span data-theme="{scan().theme}" class="input {size} {rounded ? 'rounded': ''}">
+<span data-theme="{theme}" class="input {size} {rounded ? 'rounded': ''}">
   {#if !textarea}
     <input
       maxlength="{maxLength}"

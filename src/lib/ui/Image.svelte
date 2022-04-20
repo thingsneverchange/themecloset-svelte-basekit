@@ -1,6 +1,5 @@
 <script type="ts">
 import { onMount } from 'svelte'
-import { scan } from '$lib/store'
 
 interface ColorObject {
   r:number, g: number, b: number
@@ -27,8 +26,7 @@ export let preload : boolean = false;
 export let onload : Function = null;
 export let rounded: boolean = false;
 export let imageColor : ColorObject = {} as ColorObject
-
-let cdnURL : string = scan().cdnURL
+export let cdnURL : string = ''
 let widthValue : number = fileWidth
 let computedURL : string;
 let isLoaded : 'unload' | 'onload' | 'loaded' = 'unload';

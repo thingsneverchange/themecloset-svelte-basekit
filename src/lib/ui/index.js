@@ -12,7 +12,6 @@ import Timeago from './Timeago.svelte'
 import Toggle from './Toggle.svelte'
 import Spacer from './Spacer.svelte'
 import Wrapper from './Wrapper.svelte'
-import Notification from './Notification.svelte'
 import Link from './Link.svelte'
 import Arrow from './Arrow.svelte'
 
@@ -29,7 +28,6 @@ export {
   Select,
   Timeago,
   Toggle,
-  Notification,
   Spacer,
   Wrapper,
   Link,

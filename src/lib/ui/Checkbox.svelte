@@ -1,8 +1,8 @@
 <script type="ts">
-import { scan } from '$lib/store'
   import { createEventDispatcher } from 'svelte';
 
   export let checked : boolean = false;
+  export let theme : string = 'light'
   export let size : 'small' | 'normal' | 'big' = 'normal';
 
   const toggle = () => {
@@ -13,7 +13,7 @@ import { scan } from '$lib/store'
   const dispatch = createEventDispatcher();
 
 </script>
-<div data-theme="{scan().theme}" class="checkbox_container selectionDisabled {size}" on:click="{toggle}">
+<div data-theme="{theme}" class="checkbox_container selectionDisabled {size}" on:click="{toggle}">
   <span class="checkbox">
     {#if checked}
       <span class="checked"></span>

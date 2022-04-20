@@ -1,9 +1,9 @@
 <script type="ts">
-import { scan } from '$lib/store'
 
   export let enabled :boolean = false;
   export let callback: Function = undefined;
   export let width: number = 60
+  export let theme : string = 'light'
 
   let className : string = ''
   export { className as class }
@@ -16,7 +16,7 @@ import { scan } from '$lib/store'
   }
 
 </script>
-<div data-theme="{scan().theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
+<div data-theme="{theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
 
     <div class="toggle_box {enabled ? 'enabled' : ''}">
       <span class="circle"></span>
