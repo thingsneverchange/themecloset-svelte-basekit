@@ -25,7 +25,7 @@ const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
 
 if(value != null){
-  placeholder = find(options, {value: value}).name
+  console.log(find(options, {'value': value}))
 }
 
 const changeValue = (val: any) :void => {
