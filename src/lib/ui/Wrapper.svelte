@@ -8,11 +8,13 @@ export let spacingBottom: number = 0;
 export let align: string = 'left'
 export let maxWidth: string = 'auto';
 export let center: boolean = false;
+export let backgroundColor: string = 'initial';
 </script>
 
 <div style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:100%;
+            background-color: {backgroundColor};
             {center ? 'margin:auto;' : ''}
             max-width: {maxWidth};
             {spacingTop != 0 ? 'padding-top:' + spacingTop.toString() + "px;" : ''}
