@@ -1,5 +1,6 @@
 <script>
 import { store } from '$lib/store'
+import {  fly } from 'svelte/transition';
 import Icon from '$lib/ui/Icon.svelte'
 
 const normalizeNotification = () => {
@@ -12,12 +13,12 @@ const normalizeNotification = () => {
         return data
       })
     }
-  }, 3500)
+  }, 2000)
 }
 $: $store.notification.show, normalizeNotification()
 </script>
 
-<div class="notification">
+<div class="notification" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
   <div class="notification_content">
     <div class="head">
       <h4>{$store.notification.title}</h4>
@@ -29,21 +30,6 @@ $: $store.notification.show, normalizeNotification()
   </div>
 </div>
 <style>
-
-@keyframes slowDown {
-	0% {
-    opacity:0;
-		transform:translateY(-20px)
-	}
-	100% {
-    opacity:1;
-		transform:translateY(0px)
-	}
-}
-
-.notification{
-	animation: slowDown 0.2s linear;
-}
 .notification_content{display:flex;align-items: top;justify-content: space-between}
 h4{font-size:8pt;font-weight:600;}
 p{opacity:0.8}
