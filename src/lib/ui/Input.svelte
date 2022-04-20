@@ -9,7 +9,6 @@ export let value : string = '';
 export let type: 'email' | 'text' | 'password' | 'number' = 'text';
 export let spaced: boolean = false;
 export let withTitle: string = null;
-export let theme : string = 'light'
 export let noInput: boolean = false;
 export let callback: Function = null;
 export let rounded: boolean = true;
@@ -52,7 +51,7 @@ const keypress = (event: KeyboardEvent) => {
   </span>
 {/if}
 {#if noInput == false}
-<span data-theme="{theme}" class="input {size} {rounded ? 'rounded': ''}">
+<span class="input {size} {rounded ? 'rounded': ''}">
   {#if !textarea}
     <input
       maxlength="{maxLength}"
@@ -104,5 +103,5 @@ textarea.inp{min-height:80px;}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
 .inp:not(.focus){color:#929292}
-.input[data-theme="light"] .inp{background-color:#fff;border:1px solid #efefef}
+:global(.theme-light .input[data-theme="light"] .inpt){background-color:#fff;border:1px solid #efefef}
 </style>

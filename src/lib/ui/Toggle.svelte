@@ -3,7 +3,6 @@
   export let enabled :boolean = false;
   export let callback: Function = undefined;
   export let width: number = 60
-  export let theme : string = 'light'
 
   let className : string = ''
   export { className as class }
@@ -34,14 +33,14 @@
 .toggle_box.enabled{background-color:#aeaeae;border:1px solid #aeaeae;}
 .toggle_box.enabled .circle{background-color:#222;left:initial;right:3px;}
 .toggle_tag{font-size:10pt;}
-.toggle[data-theme="light"] .toggle_box{
+:global(.theme-light .toggle .toggle_box){
   background-color:#efefef;
   border:1px solid #dedede
 }
-.toggle[data-theme="light"] .circle{
+:global(.theme-light .toggle .circle){
   background-color:#fff;
 }
-.toggle[data-theme="light"] .toggle_box.enabled{
+:global(.theme-light .toggle .toggle_box.enabled){
   background-color:#54b946;
 }
 </style>

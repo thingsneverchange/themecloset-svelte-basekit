@@ -5,7 +5,6 @@ import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
 
 export let href : string = '#';
-export let theme : string = 'light'
 export let color : string = '';
 export let backgroundColor : string = '';
 export let active : boolean = false;
@@ -32,15 +31,6 @@ let style = {
   'margin-right': offsetRight + 'px',
   'margin-bottom': offsetBottom + 'px',
   'text-align': alignLeft ? 'left' : 'center'
-}
-
-if($store.theme == 'dark'){
-  style['color'] = '#fff'
-  style['background-color'] = '#222'
-}
-if($store.theme == 'light'){
-  style['color'] = '#222'
-  style['background-color'] = '#efefef'
 }
 
 if(color != ''){
@@ -106,7 +96,7 @@ const click = async (event: ClickEvent) :Promise<void> => {
 };
 </script>
 
-<a style="{makeStyle()}" data-theme="{theme}" class="button {size}" href="{href}" on:click="{click}">
+<a style="{makeStyle()}" class="button {size}" href="{href}" on:click="{click}">
   {#if showLoading}
     <Loading size="{13}"/>
   {:else}
@@ -119,4 +109,6 @@ const click = async (event: ClickEvent) :Promise<void> => {
 .button{display:inline-block;font-size:10pt;font-weight:600;padding:10px 15px;text-decoration:none;border:0px;border-radius:5px;font-family:arial;}
 .button.big{padding:15px 25px;font-size:12pt;border-radius:3px;}
 .button.small{padding:6px 9px;font-size:9pt;border-radius:6px;}
+:global(.theme-dark .button){background-color: #222;color:#fff}
+:global(.theme-light .button){background-color: #efefef;color:#222}
 </style>

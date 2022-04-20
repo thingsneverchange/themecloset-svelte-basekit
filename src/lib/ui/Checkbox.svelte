@@ -2,7 +2,6 @@
   import { createEventDispatcher } from 'svelte';
 
   export let checked : boolean = false;
-  export let theme : string = 'light'
   export let size : 'small' | 'normal' | 'big' = 'normal';
 
   const toggle = () => {
@@ -13,7 +12,7 @@
   const dispatch = createEventDispatcher();
 
 </script>
-<div data-theme="{theme}" class="checkbox_container selectionDisabled {size}" on:click="{toggle}">
+<div class="checkbox_container selectionDisabled {size}" on:click="{toggle}">
   <span class="checkbox">
     {#if checked}
       <span class="checked"></span>
@@ -30,7 +29,6 @@
   display:inline-block;
   border-radius:3px;
 }
-.checkbox_container[data-theme="light"] .checkbox{background-color:#e2e2e2;border:1px solid #efefef;color:#222}
 .checkbox_container{display:flex;align-items:center;margin:8px 0px;cursor:pointer !important;}
 .checkbox_container.small .checkbox{width:8px;height:8px;}
 .checkbox_container.normal .checkbox{width:14px;height:14px;}
@@ -39,5 +37,5 @@
 .checked{background-color:#aeaeae;width:100%;height:100%;display:block;border-radius:10px}
 .checkbox{padding:5px;}
 .checkbox_container *{line-height:130%}
-
+:global(.theme-light .checkbox_container .checkbox){background-color:#e2e2e2;border:1px solid #efefef;color:#222}
 </style>

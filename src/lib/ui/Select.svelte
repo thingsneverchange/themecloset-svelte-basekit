@@ -12,7 +12,6 @@ export let options : selectInput[];
 export let value : number | string;
 export let placeholder : string = 'Select Option'
 export let chooseFirstDefault: boolean = false
-export let theme : string = 'light'
 
 let opened : boolean = false;
 let placeholderInternal = placeholder
@@ -63,7 +62,7 @@ onMount( () => {
   {/each}
 </select>
 
-<div class="select disabledSelection" data-theme="{theme}">
+<div class="select disabledSelection">
 
   <div class="title">
     <div class="placeholder" on:click="{toggle}">
@@ -71,13 +70,13 @@ onMount( () => {
     </div>
     <div class="arrow" on:click="{close}">
       {#if value}
-        <Icon name="close" width="{10}" height="{10}" color="{theme == 'dark' ? '#fff' : '#222'}" />
+        <Icon name="close" width="{10}" height="{10}" color="#222" />
       {:else}
         {#if opened}
-          <Icon name="DropdownTop" width="{12}" height="{12}" color="{theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownTop" width="{12}" height="{12}" color="#222" />
         {/if}
         {#if opened == false}
-          <Icon name="DropdownBottom" width="{12}" height="{12}" color="{theme == 'dark' ? '#fff' : '#222'}" />
+          <Icon name="DropdownBottom" width="{12}" height="{12}" color="#222" />
         {/if}
       {/if}
     </div>
@@ -108,7 +107,8 @@ onMount( () => {
 .select .options .option{padding:5px 0px;width:100%;}
 .select .options .option:first-child{padding-top:0px;}
 .select .options .option:last-child{padding-bottom:0px;}
-.select[data-theme="dark"]{background-color:#222;color:#fff;}
-.select[data-theme="dark"] .options{background-color:#222;}
+:global(.select .options){background-color:#222;}
+:global(.select .arrow svg){fill:#fff !important;}
+:global(.select){background-color:#222;color:#fff;}
 select{width:0px;height:0px;position:absolute;top:0px;left:0px;}
 </style>
