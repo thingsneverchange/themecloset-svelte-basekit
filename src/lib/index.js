@@ -1,4 +1,4 @@
-import { store } from './store'
+import interface from './interface'
 import Initialize from './Initialize.svelte'
 
 export {
