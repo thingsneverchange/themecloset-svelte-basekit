@@ -29,8 +29,8 @@ export const store = writable<UiStoreInterface>({
 })
 
 export const update = (newStore) : void => {
-  store.set(Object.assign({}, ...store, ...newStore))
+  store.set({...{}, ...store, ...newStore)})
   store.update(() => {
-    return Object.assign({}, ...store, ...newStore)
+    return {...{}, ...store, ...newStore)}
   })
 }
