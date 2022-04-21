@@ -85,7 +85,7 @@ const click = async (event: ClickEvent) :Promise<void> => {
     dispatch('click')
 
     if(href != ''){
-      if(!blankLink){
+      if(!blankLink && href != '#!'){
         goto(href)
       }
       if(blankLink){
