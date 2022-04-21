@@ -41,7 +41,7 @@ const click = () => {
   }
 };
 const input = () => dispatch('input');
-const keypress = (event: KeyboardEvent) => debounce({
+const keypress = debounce((event: KeyboardEvent) => {
   if(event.key == 'Enter'){
     dispatch('enter')
   }
