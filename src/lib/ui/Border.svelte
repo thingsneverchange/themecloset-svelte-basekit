@@ -1,4 +1,4 @@
-<script>
+<script type="ts">
 export let color : string = '#efefef'
 export let size : string = '1px'
 </script>
