@@ -5,7 +5,7 @@ export let size : number = 0
 export let faded: boolean = false;
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
-export let color: string = '#222'
+export let color: string = '#666'
 export let capitalize: boolean = false;
 export let align : string = 'left'
 export let fontFamily: string = 'inherit'
@@ -19,7 +19,7 @@ if(size == 0){
   if(as == 'h3') size = 22
   if(as == 'h2') size = 26
   if(as == 'h1') size = 30
-  if(as == 'p') size = 15
+  if(as == 'p') size = 16
 }
 if(isContent) as = 'div'
 
