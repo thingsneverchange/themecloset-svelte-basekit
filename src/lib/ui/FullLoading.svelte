@@ -1,5 +1,5 @@
 <div class="loadingTooltip">
-  <p>로드중</p><div class="loader">Loading...</div>
+  <p style="color:#fff;font-weight:600;">로드중</p><div class="loader">Loading...</div>
 </div>
 <div class="uploadingOverlay">
 </div>
@@ -8,7 +8,7 @@
 .uploadingOverlay{position:fixed;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.3);z-index:9999}
 
 .loadingTooltip{display:flex;justify-content: center;align-items: center}
-.loadingTooltip{font-size:10pt;width:120px;height:40px;background-color:rgba(0,0,0,0.1);z-index:10000;border-radius:5px;position:fixed;top:50%;left:50%;margin-top:-20px;margin-left:-60px;}
+.loadingTooltip{font-size:10pt;width:120px;height:40px;background-color:rgba(0,0,0,1);z-index:10000;border-radius:5px;position:fixed;top:50%;left:50%;margin-top:-20px;margin-left:-60px;}
 .loader {
   font-size: 10px;
   margin-left:10px;
