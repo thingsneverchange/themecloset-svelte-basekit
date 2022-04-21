@@ -15,6 +15,7 @@ import Wrapper from './Wrapper.svelte'
 import Link from './Link.svelte'
 import Arrow from './Arrow.svelte'
 import Border from './Border.svelte'
+import FullLoading from './FullLoading.svelte'
 
 export {
   BackgroundImage,
@@ -33,5 +34,6 @@ export {
   Wrapper,
   Link,
   Arrow,
-  Border
+  Border,
+  FullLoading
 }
