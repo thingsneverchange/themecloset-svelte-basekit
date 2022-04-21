@@ -19,7 +19,7 @@ if(size == 0){
   if(as == 'h3') size = 22
   if(as == 'h2') size = 26
   if(as == 'h1') size = 30
-  if(as == 'p') size = 16
+  if(as == 'p') size = 14
 }
 if(isContent) as = 'div'
 
