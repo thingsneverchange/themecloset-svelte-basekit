@@ -8,7 +8,6 @@ import Input from './Input.svelte'
 import Loading from './Loading.svelte'
 import Paragraph from './Paragraph.svelte'
 import Select from './Select.svelte'
-import Timeago from './Timeago.svelte'
 import Toggle from './Toggle.svelte'
 import Spacer from './Spacer.svelte'
 import Wrapper from './Wrapper.svelte'
@@ -28,7 +27,6 @@ export {
   Loading,
   Paragraph,
   Select,
-  Timeago,
   Toggle,
   Spacer,
   Wrapper,
