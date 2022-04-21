@@ -80,6 +80,7 @@ afterNavigate((navigaton) => {
 
 const click = async (event: ClickEvent) :Promise<void> => {
 
+  event.preventDefault()
   if(! showLoading){
     dispatch('click')
 
