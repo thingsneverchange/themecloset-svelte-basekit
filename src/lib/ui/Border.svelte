@@ -5,7 +5,7 @@ export let size : string = '1px'
 
 
 <div class="border" style="
-  border: {size} solid {color};
+  border-top: {size} solid {color};
   display:block;width:100%;
 ">
 
