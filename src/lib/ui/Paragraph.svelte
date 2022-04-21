@@ -15,11 +15,11 @@ export let isContent: boolean = false
 size = parseInt(size)
 if(size == 0){
   if(as == 'h5') size = 13
-  if(as == 'h4') size = 16
-  if(as == 'h3') size = 18
-  if(as == 'h2') size = 24
-  if(as == 'h1') size = 29
-  if(as == 'p') size = 10
+  if(as == 'h4') size = 18
+  if(as == 'h3') size = 22
+  if(as == 'h2') size = 26
+  if(as == 'h1') size = 30
+  if(as == 'p') size = 15
 }
 if(isContent) as = 'div'
 
