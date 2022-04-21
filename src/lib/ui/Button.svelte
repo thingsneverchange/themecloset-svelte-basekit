@@ -96,7 +96,7 @@ const click = async (event: ClickEvent) :Promise<void> => {
 };
 </script>
 
-<a style="{makeStyle()}" class="button {size}" href="{href}" on:click="{click}">
+<a style="{makeStyle()}" class="button {size}" href="{href ? href : '#!'}" on:click="{click}">
   {#if showLoading}
     <Loading size="{13}"/>
   {:else}
