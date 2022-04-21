@@ -8,6 +8,7 @@ export let spacingHorizontal: number = 0
 export let color: string = '#666'
 export let capitalize: boolean = false;
 export let align : string = 'left'
+export let bold : boolean = false
 export let fontFamily: string = 'inherit'
 export let isContent: boolean = false
 
@@ -27,7 +28,7 @@ let fontSize: string = size.toString() + 'px'
 </script>
 <svelte:element
   this="{as}" class="paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-  style="font-family:{fontFamily}; font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
+  style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>
 
