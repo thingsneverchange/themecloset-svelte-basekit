@@ -34,7 +34,7 @@ $: $store.notification.show, normalizeNotification()
 h4{font-size:8pt;font-weight:600;}
 p{opacity:0.8}
 .notification{
-	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;position:fixed;top:20px;left:50%;margin-left:-150px;width:300px;border-radius:7px;background-color:#222;color:#fff;padding:15px 25px;font-size:10pt;}
+	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;position:fixed;top:20px;left:50%;margin-left:-150px;width:300px;border-radius:7px;background-color:#222;color:#fff;padding:15px 25px;font-size:10pt;z-index:999999}
 :global(.theme-light .notification){background-color:#fff;color:#222;}
 :global(.theme-light .close svg){fill: #222 !important}
 </style>

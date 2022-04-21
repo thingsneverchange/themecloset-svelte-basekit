@@ -4,7 +4,7 @@ import { createEventDispatcher } from 'svelte';
 import { goto, afterNavigate } from '$app/navigation';
 import Loading from '$lib/ui/Loading.svelte';
 
-export let href : string = '#';
+export let href : string = '#!';
 export let color : string = '';
 export let backgroundColor : string = '';
 export let active : boolean = false;
@@ -96,7 +96,7 @@ const click = async (event: ClickEvent) :Promise<void> => {
 };
 </script>
 
-<a style="{makeStyle()}" class="button {size}" href="{href ? href : 'javascript:void(0)'}" on:click="{click}">
+<a style="{makeStyle()}" class="button {size}" href="{href}" on:click="{click}">
   {#if showLoading}
     <Loading size="{13}"/>
   {:else}
