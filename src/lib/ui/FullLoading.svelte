@@ -1,5 +1,5 @@
 <div class="loadingTooltip">
-  <div class="loader">Loading...</div>
+  <p>로드중</p><div class="loader">Loading...</div>
 </div>
 <div class="uploadingOverlay">
 </div>
