@@ -1,6 +1,7 @@
 <script type="ts">
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte';
+import { debounce } from 'lodash-es'
 export let placeholder : string = '';
 export let full : boolean = false;
 export let textarea : boolean = false;
@@ -40,11 +41,12 @@ const click = () => {
   }
 };
 const input = () => dispatch('input');
-const keypress = (event: KeyboardEvent) => {
+const keypress = debounce((event: KeyboardEvent) => {
   if(event.key == 'Enter'){
     dispatch('enter')
   }
-}
+  dispatch('input')
+}, 500)
 </script>
 {#if withTitle}
   <span class="input_title">
