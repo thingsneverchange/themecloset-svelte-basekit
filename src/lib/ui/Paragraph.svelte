@@ -9,6 +9,8 @@ export let color: string = '#222'
 export let capitalize: boolean = false;
 export let align : string = 'left'
 export let fontFamily: string = 'inherit'
+export let isContent: boolean = false
+
 
 size = parseInt(size)
 if(size == 0){
@@ -19,6 +21,7 @@ if(size == 0){
   if(as == 'h1') size = 29
   if(as == 'p') size = 10
 }
+if(isContent) as = 'div'
 
 let fontSize: string = size.toString() + 'px'
 </script>
