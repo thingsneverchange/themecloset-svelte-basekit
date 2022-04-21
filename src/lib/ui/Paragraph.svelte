@@ -1,7 +1,7 @@
 <script type="ts">
 
 export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
-export let size : number
+export let size : number = 0
 export let faded: boolean = false;
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
@@ -11,7 +11,7 @@ export let align : string = 'left'
 export let fontFamily: string = 'inherit'
 
 size = parseInt(size)
-if(size == null){
+if(size == 0){
   if(as == 'h5') size = 13
   if(as == 'h4') size = 16
   if(as == 'h3') size = 18
