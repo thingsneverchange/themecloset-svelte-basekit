@@ -30,8 +30,8 @@
 .toggle{display:flex;cursor:pointer}
 .toggle_box{border:1px solid #777;background-color:#777;border-radius:10px;width:100%;height:23px;padding:3px;margin-right:10px;position:relative;}
 .toggle_box .circle{background-color:#aeaeae;padding:6px;display:block;border-radius:50%;width:15px;height:15px;position:absolute;left:3px;}
-.toggle_box.enabled{background-color:#aeaeae;border:1px solid #aeaeae;}
-.toggle_box.enabled .circle{background-color:#222;left:initial;right:3px;}
+.toggle_box.enabled{background-color:#aeaeae;}
+.toggle_box.enabled .circle{background-color:#ebe09f;left:initial;right:3px;}
 .toggle_tag{font-size:10pt;}
 :global(.theme-light .toggle .toggle_box){
   background-color:#efefef;
@@ -41,6 +41,6 @@
   background-color:#fff;
 }
 :global(.theme-light .toggle .toggle_box.enabled){
-  background-color:#54b946;
+  background-color:#f7ffc6;
 }
 </style>
