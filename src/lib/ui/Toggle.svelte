@@ -15,7 +15,7 @@
   }
 
 </script>
-<div data-theme="{theme}" class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
+<div class="toggle {className}" style="max-width : {width}px" on:click="{toggle}">
 
     <div class="toggle_box {enabled ? 'enabled' : ''}">
       <span class="circle"></span>
