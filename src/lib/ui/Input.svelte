@@ -104,7 +104,7 @@ textarea.inp{min-height:80px;}
 .rounded .inp{border-radius:5px;}
 .inp{opacity:0.8}
 .inp:focus{opacity:1}
-.input_title{opacity:0.6;font-weight:600;padding:10px 6px;font-size:8pt;display:block;}
+.input_title{opacity:0.6;font-weight:600;padding:0px 6px;font-size:8pt;display:block;}
 .inp.search{padding:6px 10px;font-size:10pt;background-color:transparent;border:1px solid #fff}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
