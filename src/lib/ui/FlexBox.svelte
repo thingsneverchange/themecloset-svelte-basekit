@@ -14,15 +14,15 @@ const makeClick = () :void => {
 }
 
 </script>
-<div on:click="{makeClick}" class="{classNames} flexbox {fixedWidth ? 'fixed-width-' + fixedWidth : ''}" style="justify-content:{justifyContent}; align-items:{alignItems};">
+<div on:click="{makeClick}" class="{classNames ? classNames : ''} flexbox {fixedWidth ? 'fixed-width-' + fixedWidth : ''}" style="justify-content:{justifyContent}; align-items:{alignItems};">
   <slot/>
 </div>
 
 <style>
 .flexbox{display:flex;}
-.fixed-width-4 > *{flex:0 0 25%;}
-.fixed-width-2 > *{flex:0 0 50%;}
-.fixed-width-3 > *{flex:0 0 33.3333%;}
-.fixed-width-5 > *{flex:0 0 20%;}
-.fixed-width-6 > *{flex:0 0 16.6666%;}
+:global(.fixed-width-4 > *){flex:0 0 25%;}
+:global(.fixed-width-2 > *){flex:0 0 50%;}
+:global(.fixed-width-3 > *){flex:0 0 33.3333%;}
+:global(.fixed-width-5 > *){flex:0 0 20%;}
+:global(.fixed-width-6 > *){flex:0 0 16.6666%;}
 </style>
