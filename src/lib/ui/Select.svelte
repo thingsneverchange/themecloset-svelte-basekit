@@ -24,8 +24,10 @@ options = [
 const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
 
-if(value != null){
-  placeholderInternal = find(options, {'value': value}).name
+if(value != null && options.length != 0){
+  if(find(options, {'value': value})){
+    placeholderInternal = find(options, {'value': value}).name
+  }
 }
 
 const changeValue = (val: any) :void => {
