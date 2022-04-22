@@ -14,7 +14,7 @@ const makeClick = () :void => {
 }
 
 </script>
-<div on:click="{makeClick}" class="{classNames} flexbox" style="justify-content:{justifyContent}; align-items:{alignItems};--fixedWidth:0 0 {100/fixedWidth}%;">
+<div on:click="{makeClick}" class="{classNames} flexbox" style="justify-content:{justifyContent}; align-items:{alignItems};{fixedWidth ? '--fixedWidth:0 0 ' + 100 / fixedWidth +'%;' : ''}">
   <slot/>
 </div>
 <style>
