@@ -2,7 +2,7 @@
 import { createEventDispatcher } from 'svelte';
 export let justifyContent : string = 'initial'
 export let alignItems : string = 'center'
-export let fixedWidth : number = 4;
+export let fixedWidth : number;
 
 let classNames : string;
 export { classNames as class }
@@ -19,5 +19,5 @@ const makeClick = () :void => {
 </div>
 <style>
 .flexbox{display:flex;}
-.flexbox > *{flex:var(--fixedWidth);}
+:global(.flexbox > *){flex:var(--fixedWidth);}
 </style>
