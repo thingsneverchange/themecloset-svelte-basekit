@@ -106,7 +106,7 @@ const click = async (event: ClickEvent) :Promise<void> => {
 </a>
 
 <style>
-*{box-sizing:border-box;margin:0px;padding:0px;}
+*{box-sizing:border-box;margin:0px;padding:0px;    white-space: nowrap;}
 .button{display:inline-block;font-size:10pt;font-weight:600;padding:10px 15px;text-decoration:none;border:0px;border-radius:5px;font-family:arial;}
 .button.big{padding:15px 25px;font-size:12pt;border-radius:3px;}
 .button.small{padding:6px 9px;font-size:9pt;border-radius:6px;}
