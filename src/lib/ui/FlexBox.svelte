@@ -20,9 +20,9 @@ const makeClick = () :void => {
 
 <style>
 .flexbox{display:flex;}
-.fixed-width-4{flex:0 0 25%;}
-.fixed-width-2{flex:0 0 50%;}
-.fixed-width-3{flex:0 0 33.3333%;}
-.fixed-width-5{flex:0 0 20%;}
-.fixed-width-6{flex:0 0 16.6666%;}
+.fixed-width-4 > *{flex:0 0 25%;}
+.fixed-width-2 > *{flex:0 0 50%;}
+.fixed-width-3 > *{flex:0 0 33.3333%;}
+.fixed-width-5 > *{flex:0 0 20%;}
+.fixed-width-6 > *{flex:0 0 16.6666%;}
 </style>
