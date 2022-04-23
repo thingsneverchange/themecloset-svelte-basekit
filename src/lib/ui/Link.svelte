@@ -18,5 +18,5 @@ const dispatch = createEventDispatcher();
   <slot/>
 </a>
 <style>
-.withLine{border-bottom:1px solid #222;color:#2933ff}
+.withLine{border-bottom:1px solid #2933ff;color:#2933ff}
 </style>
