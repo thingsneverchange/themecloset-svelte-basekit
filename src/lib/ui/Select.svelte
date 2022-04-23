@@ -108,9 +108,9 @@ onMount( () => {
 .select .placeholder{width:calc(100% - 20px);padding:10px 15px;}
 .select .arrow{padding-right:10px;}
 .select::selection, .select *::selection { background: transparent;color:inherit}
-.select{font-size:11pt;position:relative;border-radius:3px;cursor:pointer;font-size:10pt;border:1px solid #222;}
+.select{font-size:11pt;position:relative;border-radius:3px;cursor:pointer;font-size:10pt;border:1px solid #222;padding:5px 0px}
 .select .title{display:flex;justify-content: space-between;align-items:center;}
-.select .options{top:33px;width:calc(100% + 2px);left:-1px;position:absolute;;border: 1px solid #222;border-top:0px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;padding-bottom:10px;z-index:9999}
+.select .options{top:43px;width:calc(100% + 2px);left:-1px;position:absolute;;border: 1px solid #222;border-top:0px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;padding:10px 15px;padding-bottom:10px;z-index:9999;padding-top:5px;}
 .select .options .option{padding:10px 0px;width:100%;}
 .select .options .option:first-child{padding-top:0px;}
 .select .options .option:last-child{padding-bottom:5px;}
