@@ -29,7 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {    line-height: 190%;
+body {    line-height: 140%;
 }
 a{
 	border-bottom:0px;

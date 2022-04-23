@@ -27,12 +27,13 @@ if(isContent) as = 'div'
 let fontSize: string = size.toString() + 'px'
 </script>
 <svelte:element
-  this="{as}" class="paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
+  this="{as}" class="{isContent ? 'isContent': ''}paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
   style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>
 
 <style>
+  .isContent{line-height:190%}
   *{box-sizing:border-box;margin:0px;padding:0px;}
   .faded{opacity:0.7}
   .capitalize{text-transform: capitalize;}
