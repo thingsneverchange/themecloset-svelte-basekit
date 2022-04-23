@@ -1,4 +1,4 @@
-<script type="ts">
+ <script type="ts">
 import { createEventDispatcher } from 'svelte';
 export let justifyContent : string = 'initial'
 export let alignItems : string = 'center'
