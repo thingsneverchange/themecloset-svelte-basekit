@@ -58,6 +58,7 @@ const keypress = debounce((event: KeyboardEvent) => {
 <span class="input {size} {rounded ? 'rounded': ''}" class:disabled="{disabled}">
   {#if !textarea}
     <input
+      disabled
       maxlength="{maxLength}"
       on:keypress="{keypress}"
       on:input="{input}"
@@ -73,6 +74,7 @@ const keypress = debounce((event: KeyboardEvent) => {
       {backgroundColor ? 'background-color:' + backgroundColor + ';' : ''} {full ? 'width:100%' : ''}"/>
   {:else}
     <textarea
+      disabled
       maxlength="{maxLength}"
       on:input="{input}"
       bind:value="{value}"
