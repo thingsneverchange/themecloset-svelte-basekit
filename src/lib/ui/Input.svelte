@@ -109,7 +109,7 @@ textarea.inp{min-height:80px;}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
 .inp{color:#fff}
-.input.disabled .inp{background-color:#000}
 :global(.theme-light .input .inp){background-color:#fff;border:1px solid #efefef;color:#222}
 :global(.theme-light .input.disabled .inp){background-color:#efefef}
+:global(.theme-dark .input.disabled .inp){background-color:#222;color:#fff}
 </style>
