@@ -1,7 +1,6 @@
 <script type="ts">
 import { goto, afterNavigate } from '$app/navigation'
 import { createEventDispatcher } from 'svelte';
-import { goto, afterNavigate } from '$app/navigation';
 
 export let withLine :boolean = false;
 export let goBack : boolean = false;
