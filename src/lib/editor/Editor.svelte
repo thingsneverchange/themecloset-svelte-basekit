@@ -1,7 +1,7 @@
 <script type="ts">
   // @ts-nocheck
 
-  import '$lib/assets/editor/module/redactorx.css';
+  import '$lib/assets/editor/module/redactorx.min.css';
   import { onMount } from 'svelte'
   import { createEventDispatcher } from 'svelte';
 
