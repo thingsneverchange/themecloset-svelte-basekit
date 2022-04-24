@@ -1,18 +1,28 @@
 <script type="ts">
-import { goto } from '$app/navigation'
+import { goto, afterNavigate } from '$app/navigation'
 import { createEventDispatcher } from 'svelte';
-export let withLine :boolean = false;
-const dispatch = createEventDispatcher();
- export let href : string;
- export let target: string = undefined;
+import { goto, afterNavigate } from '$app/navigation';
 
- const sendLink = (event: MouseEvent) : void => {
-   event.preventDefault()
-   dispatch('click')
-   if(href){
-     goto(href)
-   }
+export let withLine :boolean = false;
+export let goBack : boolean = false;
+export let href : string;
+export let target: string = undefined;
+
+afterNavigate((navigaton) => {
+ if(navigaton.from && goBack){
+   href = navigaton.from.pathname
  }
+})
+
+const dispatch = createEventDispatcher();
+
+const sendLink = (event: MouseEvent) : void => {
+ event.preventDefault()
+ dispatch('click')
+ if(href){
+   goto(href)
+ }
+}
 </script>
 <a class:withLine="{withLine}" {href} {target} on:click="{sendLink}">
   <slot/>
