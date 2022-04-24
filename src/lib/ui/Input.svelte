@@ -17,6 +17,7 @@ export let size: 'small' | 'big' = 'big'
 export let required : boolean = false;
 export let backgroundColor : string;
 export let borderColor : string;
+export let disabled : boolean;
 
 let inputElement : HTMLElement;
 let isFocused: boolean = false;
@@ -54,7 +55,7 @@ const keypress = debounce((event: KeyboardEvent) => {
   </span>
 {/if}
 {#if noInput == false}
-<span class="input {size} {rounded ? 'rounded': ''}">
+<span class="input {size} {rounded ? 'rounded': ''}" class:disabled="{disabled}">
   {#if !textarea}
     <input
       maxlength="{maxLength}"
@@ -99,7 +100,6 @@ const keypress = debounce((event: KeyboardEvent) => {
 .inp{font-family:inherit;resize:none;}
 textarea.inp{min-height:80px;}
 .inp.spcaed{margin:5px 0px;}
-.inp{transition:background-color 0.3s linear}
 .inp{background-color:#3f3f3f;border:0px;padding: 12px 15px;font-size: 10pt;outline: none;color:inherit;}
 .rounded .inp{border-radius:5px;}
 .inp{opacity:0.8}
@@ -109,5 +109,7 @@ textarea.inp{min-height:80px;}
 .inp.search::placeholder{color:#fff}
 .small .inp{font-size:9pt;padding:8px 12px;}
 .inp{color:#fff}
+.input.disabled .inp{background-color:#000}
 :global(.theme-light .input .inp){background-color:#fff;border:1px solid #efefef;color:#222}
+:global(.theme-light .input.disabled .inp){background-color:#efefef}
 </style>
