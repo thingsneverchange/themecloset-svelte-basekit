@@ -14,7 +14,7 @@
 
   onMount( async () => {
     if(editorEntry && window){
-      let RedactorModule = await import('$lib/assets/editor/module/redactorx.usm.min.js')
+      let RedactorModule = await import('$lib/assets/js/redactorx.min.js')
 
       RedactorModule.default(editorEntry,{
       source: false,
