@@ -1,8 +1,23 @@
-<script>
+<script type="ts">
 import { store } from '$lib/store'
-import {  fly } from 'svelte/transition';
+import { fly } from 'svelte/transition';
 import Icon from '$lib/ui/Icon.svelte'
+import { onMount } from 'svelte'
+import { getCookies, setCookie } from 'js-cookie';
 
+onMount( () : void => {
+  let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookies)
+  if(notifyMessageText){
+    setTimeout( () => {
+        store.update((data) => {
+          data.notification.text = notifyMessageText
+          data.notification.title = notifyMessageTitle
+          data.notification.show = true
+          return data
+        })
+    }, 500)
+  }
+})
 const normalizeNotification = () => {
 
   setTimeout( () => {
