@@ -15,9 +15,9 @@ export let callback: Function = null;
 export let rounded: boolean = true;
 export let size: 'small' | 'big' = 'big'
 export let required : boolean = false;
-export let backgroundColor : string;
-export let borderColor : string;
-export let disabled : boolean;
+export let backgroundColor : string = undefined;
+export let borderColor : string =  undefined;
+export let disabled : boolean = false;
 
 let inputElement : HTMLElement;
 let isFocused: boolean = false;
