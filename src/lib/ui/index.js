@@ -15,6 +15,7 @@ import Link from './Link.svelte'
 import Arrow from './Arrow.svelte'
 import Border from './Border.svelte'
 import FullLoading from './FullLoading.svelte'
+import RedirectNotification from './RedirectNotification.svelte'
 
 export {
   BackgroundImage,
@@ -33,5 +34,6 @@ export {
   Link,
   Arrow,
   Border,
-  FullLoading
+  FullLoading,
+  RedirectNotification
 }
