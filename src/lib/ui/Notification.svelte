@@ -3,20 +3,24 @@ import { store } from '$lib/store'
 import { fly } from 'svelte/transition';
 import Icon from '$lib/ui/Icon.svelte'
 import { onMount } from 'svelte'
-import { getCookies, setCookie } from '$lib/utils/cookies';
+import { getCookies, setCookie, removeCookie } from '$lib/utils/cookies';
 
 onMount( () : void => {
   let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
+
   if(notifyMessageText){
     setTimeout( () => {
         store.update((data) => {
-          data.notification.text = notifyMessageText
-          data.notification.title = notifyMessageTitle
+          data.notification.text = decodeURIComponent(notifyMessageText)
+          data.notification.title = decodeURIComponent(notifyMessageTitle)
           data.notification.show = true
           return data
         })
     }, 500)
+    removeCookie('notifyMessageText')
+    removeCookie('notifyMessageTitle')
   }
+
 })
 const normalizeNotification = () => {
 
