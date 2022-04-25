@@ -6,7 +6,8 @@ import { onMount } from 'svelte'
 import { getCookies, setCookie } from '$lib/utils/cookies';
 
 onMount( () : void => {
-  let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookies)
+  let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
+  console.log(getCookies(document.cookie))
   if(notifyMessageText){
     setTimeout( () => {
         store.update((data) => {
