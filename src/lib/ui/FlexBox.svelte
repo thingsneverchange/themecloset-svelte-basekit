@@ -22,6 +22,7 @@ const makeClick = () :void => {
 .flexbox{display:flex;}
 :global(.fixed-width-4 > *){flex:0 0 25%;}
 :global(.fixed-width-2 > *){flex:0 0 50%;}
+:global(.fixed-width-1 > *){flex:0 0 100%;}
 :global(.fixed-width-3 > *){flex:0 0 33.3333%;}
 :global(.fixed-width-5 > *){flex:0 0 20%;}
 :global(.fixed-width-6 > *){flex:0 0 16.6666%;}
