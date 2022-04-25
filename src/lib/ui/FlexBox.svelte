@@ -2,7 +2,7 @@
 import { createEventDispatcher } from 'svelte';
 export let justifyContent : string = 'initial'
 export let alignItems : string = 'center'
-export let fixedWidth : number;
+export let fixedWidth : number = undefined;
 
 let classNames : string;
 export { classNames as class }
