@@ -12,6 +12,6 @@ export const NotifyRedirect = (input : NotifyRedirectInput) :void => {
   setCookie('notifyMessageText', input.text)
   setCookie('notifyMessageTitle', input.title)
 
-  goto(input.url)
+  window.location.href = input.url
 
 }
