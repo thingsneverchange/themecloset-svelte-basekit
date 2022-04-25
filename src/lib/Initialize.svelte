@@ -16,10 +16,8 @@ import Notification from '$lib/ui/Notification.svelte'
 {/if}
 </svelte:head>
 <div id="themecloset_app" class="theme-{theme}" style="font-family: {fontFamily};font-size: {fontSize}">
-  {#if $store.notification.show}
-    {#key $store.notification.text}
+
       <Notification />
-    {/key}
-  {/if}
+      
   <slot />
 </div>

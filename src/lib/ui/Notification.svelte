@@ -7,7 +7,6 @@ import { getCookies, setCookie } from '$lib/utils/cookies';
 
 onMount( () : void => {
   let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
-  console.log(getCookies(document.cookie))
   if(notifyMessageText){
     setTimeout( () => {
         store.update((data) => {
@@ -33,18 +32,21 @@ const normalizeNotification = () => {
 }
 $: $store.notification.show, normalizeNotification()
 </script>
-
-<div class="notification" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
-  <div class="notification_content">
-    <div class="head">
-      <h4>{$store.notification.title}</h4>
-      <p>{$store.notification.text}</p>
+{#if $store.notification.show}
+  {#key $store.notification.text}
+    <div class="notification" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
+      <div class="notification_content">
+        <div class="head">
+          <h4>{$store.notification.title}</h4>
+          <p>{$store.notification.text}</p>
+        </div>
+        <div class="close">
+          <Icon name="Clock" width="{11}" height="{11}" color="#fff" />
+        </div>
+      </div>
     </div>
-    <div class="close">
-      <Icon name="Clock" width="{11}" height="{11}" color="#fff" />
-    </div>
-  </div>
-</div>
+  {/key}
+{/if}
 <style>
 .notification_content{display:flex;align-items: top;justify-content: space-between}
 h4{font-size:8pt;font-weight:600;}
