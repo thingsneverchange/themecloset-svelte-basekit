@@ -1,5 +1,5 @@
 import { goto } from '$app/navigation'
-import { setCookie } from 'js-cookie';
+import { setCookie } from '$lib/utils/cookies';
 
 interface NotifyRedirectInput {
   url: string,
