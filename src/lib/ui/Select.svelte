@@ -6,7 +6,7 @@ import { find } from 'lodash-es'
 
 interface selectInput{
   name: string,
-  value: number | string
+  value: number | string | boolean
 }
 
 export let options : selectInput[];

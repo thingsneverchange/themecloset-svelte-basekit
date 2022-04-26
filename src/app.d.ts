@@ -4,6 +4,7 @@ import type { Load } from "@sveltejs/kit"
 import type { ErrorLoad, ExternalFetch } from "@sveltejs/kit"
 import type { Page } from "@sveltejs/kit"
 import { AxiosError } from 'axios';
+import { paginationCalculator } from "pagination-calculator";
 declare namespace App {
 	// interface Locals {}
 	// interface Platform {}
@@ -41,6 +42,7 @@ declare namespace App {
          type: 'axios-error' | 'stock-error';
       }
     }
+    type Pagination = paginationCalculator<T>
   }
 
   declare namespace Stores {
