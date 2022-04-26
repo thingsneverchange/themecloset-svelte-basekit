@@ -4,7 +4,7 @@ import { createEventDispatcher } from 'svelte';
 
 export let withLine :boolean = false;
 export let goBack : boolean = false;
-export let href : string;
+export let href : string = '';
 export let target: string = undefined;
 
 afterNavigate((navigaton) => {
