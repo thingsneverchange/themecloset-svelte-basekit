@@ -3,7 +3,7 @@ import { store } from '$lib/store'
 import { fly } from 'svelte/transition';
 import Icon from '$lib/ui/Icon.svelte'
 import { onMount } from 'svelte'
-import dayjs from dayjs
+import dayjs from 'dayjs'
 import { getCookies, setCookie, removeCookie } from '$lib/utils/cookies';
 
 let uniqueKey : string = ''
