@@ -3,8 +3,10 @@ import { store } from '$lib/store'
 import { fly } from 'svelte/transition';
 import Icon from '$lib/ui/Icon.svelte'
 import { onMount } from 'svelte'
+import dayjs from dayjs
 import { getCookies, setCookie, removeCookie } from '$lib/utils/cookies';
 
+let uniqueKey : string = ''
 onMount( () : void => {
   let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
 
@@ -23,7 +25,7 @@ onMount( () : void => {
 
 })
 const normalizeNotification = () => {
-
+  uniqueKey = dayjs().unix()
   setTimeout( () => {
     if($store.notification.show){
       store.update((data) => {
@@ -37,7 +39,7 @@ const normalizeNotification = () => {
 $: $store.notification.show, normalizeNotification()
 </script>
 {#if $store.notification.show}
-  {#key $store.notification.text}
+  {#key uniqueKey}
     <div class="notification" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
       <div class="notification_content">
         <div class="head">
