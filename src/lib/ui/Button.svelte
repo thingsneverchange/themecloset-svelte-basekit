@@ -62,7 +62,7 @@ if(circled){
 }
 
 if(faded){
-  style['opacity'] = '0'
+  style['opacity'] = '0.6'
 }
 if(width != 0){
   style['width'] = width + 'px'
