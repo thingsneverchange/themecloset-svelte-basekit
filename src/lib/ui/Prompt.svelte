@@ -26,11 +26,11 @@ const toggle = () :void => {
   <div class="prompt" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
     <div class="content">
       <div class="head">
-        {#if subTitle}
-          <h3>{subTitle}</h3>
-        {/if}
         {#if title}
-          <h4>{title}</h4>
+          <h3>{title}</h3>
+        {/if}
+        {#if subTitle}
+          <h4>{subTitle}</h4>
         {/if}
         <span on:click="{confirm}">
           예
