@@ -8,7 +8,4 @@ const confirm = () =>{
 }
 </script>
 <Initialize theme="light">
-<Prompt on:confirm="{confirm}">
-  Click me
-</Prompt>
 </Initialize>

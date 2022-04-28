@@ -10,6 +10,7 @@ import { createEventDispatcher } from 'svelte';
 
 export let title;
 export let show = false;
+export let subTitle;
 const dispatch = createEventDispatcher();
 const confirm = (event) :void => {
   dispatch('confirm', event.detail)
@@ -25,6 +26,9 @@ const toggle = () :void => {
   <div class="prompt" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
     <div class="content">
       <div class="head">
+        {#if subTitle}
+          <h3>{subTitle}</h3>
+        {/if}
         {#if title}
           <h4>{title}</h4>
         {/if}
@@ -43,14 +47,12 @@ const toggle = () :void => {
   </div>
 </div>
 <style>
-h4{font-size:9pt;padding-bottom:10px;}
-p{opacity:0.8}
+h3{font-size:11.5pt;padding-bottom:10px;font-weight:600;}
+h4{padding-bottom:10px;opacity:0.8}
 .prompt{
-  text-align:center;
-	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;position:fixed;top:20px;left:50%;margin-left:-100px;width:200px;border-radius:7px;padding:15px 25px;font-size:10pt;z-index:999999}
+	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;position:fixed;top:20px;left:50%;margin-left:-160px;width:380px;border-radius:7px;padding:20px 25px;font-size:10pt;z-index:999999}
 :global(.theme-light .prompt){background-color:#fff;color:#222;}
 :global(.theme-dark .prompt){background-color:#222;color:#fff;}
 :global(.theme-light .close svg){fill: #222 !important}
-
-.content .head span{font-weight:600;padding:0px 15px;font-size:10pt;cursor:pointer}
+.content .head span{font-weight:600;padding-right:25px;font-size:10pt;cursor:pointer}
 </style>
