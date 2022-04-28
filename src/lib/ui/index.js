@@ -15,6 +15,7 @@ import Link from './Link.svelte'
 import Arrow from './Arrow.svelte'
 import Border from './Border.svelte'
 import FullLoading from './FullLoading.svelte'
+import Prompt from './Prompt.svelte'
 import { NotifyRedirect } from './RedirectNotification'
 
 export {
@@ -35,5 +36,6 @@ export {
   Arrow,
   Border,
   FullLoading,
-  NotifyRedirect
+  NotifyRedirect,
+  Prompt
 }
