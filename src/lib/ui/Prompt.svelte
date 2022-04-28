@@ -13,6 +13,7 @@ export let show = false;
 const dispatch = createEventDispatcher();
 const confirm = (event) :void => {
   dispatch('confirm', event.detail)
+  toggle()
 }
 const toggle = () :void => {
   show = show ? false : true
