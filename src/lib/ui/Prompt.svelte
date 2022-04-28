@@ -25,7 +25,7 @@ const toggle = () :void => {
     <div class="content">
       <div class="head">
         {#if title}
-          <h4>환불을 진행하겠습니까?</h4>
+          <h4>{title}</h4>
         {/if}
         <span on:click="{confirm}">
           예
