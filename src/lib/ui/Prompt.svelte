@@ -50,7 +50,7 @@ const toggle = () :void => {
 h3{font-size:11.5pt;padding-bottom:10px;font-weight:600;}
 h4{padding-bottom:10px;opacity:0.8}
 .prompt{
-	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;position:fixed;top:20px;left:50%;margin-left:-160px;width:380px;border-radius:7px;padding:20px 25px;font-size:10pt;z-index:999999}
+	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;position:fixed;top:20px;left:50%;margin-left:-120px;width:240px;border-radius:7px;padding:20px 25px;font-size:10pt;z-index:999999}
 :global(.theme-light .prompt){background-color:#fff;color:#222;}
 :global(.theme-dark .prompt){background-color:#222;color:#fff;}
 :global(.theme-light .close svg){fill: #222 !important}
