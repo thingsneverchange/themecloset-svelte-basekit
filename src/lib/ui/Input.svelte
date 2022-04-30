@@ -18,7 +18,7 @@ export let required : boolean = false;
 export let backgroundColor : string = undefined;
 export let borderColor : string =  undefined;
 export let disabled : boolean = false;
-export let numberOnly : boolean = false;
+export let accept : string = '';
 
 let inputElement : HTMLElement;
 let isFocused: boolean = false;
@@ -44,9 +44,7 @@ const click = () => {
 };
 const input = () = {
   dispatch('input')
-  if(type == 'number'){
-    value = value.replace(/\D+/g, '')
-  }
+  if(accept == 'number') value = value.replace(/\D+/g, '')
 };
 const keypress = debounce((event: KeyboardEvent) => {
 
