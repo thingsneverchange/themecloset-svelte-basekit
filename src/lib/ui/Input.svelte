@@ -10,7 +10,6 @@ export let value : string = '';
 export let type: 'email' | 'text' | 'password' | 'number' = 'text';
 export let spaced: boolean = false;
 export let withTitle: string = null;
-export let noInput: boolean = false;
 export let callback: Function = null;
 export let rounded: boolean = true;
 export let size: 'small' | 'big' = 'big'
@@ -32,7 +31,6 @@ onMount(() :void => {
 
 
 const dispatch = createEventDispatcher();
-const change = () => dispatch('change');
 const toggleFocus = () => {
   isFocused = isFocused ? false : true
 }
@@ -42,26 +40,24 @@ const click = () => {
     callback()
   }
 };
+const change = () => dispatch('change')
 const input = () => dispatch('input')
-const keypress = debounce((event: KeyboardEvent) => {
+const keypress = (event: KeyboardEvent) => {
   if(event.key == 'Enter'){
     dispatch('enter')
   }
   dispatch('input')
-}, 500)
+}
 
-const validator = (node, value) => {
-  let previousN = n
-  return {
-    update(value) {
-      if(accept == 'number'){
-        n = value === null || n < node.min ? previousN : parseInt(value)
-      }else{
-        value
-      }
-    }
+const validate = () => {
+  if(accept == 'number'){
+  	if(/^\d+$/.test(value) == false){
+  	 value = value.replace(/[^0-9]+/g, "")
+  	}
   }
 }
+
+$: value, validate()
 
 </script>
 {#if withTitle}
@@ -69,13 +65,12 @@ const validator = (node, value) => {
     { withTitle }
   </span>
 {/if}
-{#if noInput == false}
+{value}
 <span class="input {size} {rounded ? 'rounded': ''}" class:disabled="{disabled}">
   {#if !textarea}
     <input
       disabled="{disabled ? disabled : null}"
       maxlength="{maxLength}"
-      use:validator={value}
       on:keypress="{keypress}"
       on:input="{input}"
       bind:this="{inputElement}"
@@ -90,7 +85,6 @@ const validator = (node, value) => {
       {backgroundColor ? 'background-color:' + backgroundColor + ';' : ''} {full ? 'width:100%' : ''}"/>
   {:else}
     <textarea
-      use:validator={value}
       disabled="{disabled ? disabled : null}"
       maxlength="{maxLength}"
       on:input="{input}"
@@ -102,7 +96,7 @@ const validator = (node, value) => {
   {/if}
   {#if type.includes('search')}
     <span class="searchicon" on:click="{click}">
-      <!--<SearchIcon color="#fff" width="15"/>-->
+      <Icon name="search" color="#aeaeae"/>
     </span>
   {/if}
   {#if required}
@@ -111,7 +105,6 @@ const validator = (node, value) => {
   </span>
   {/if}
 </span>
-{/if}
 <style>
 .required{color:#b8372a;padding:0px 10px;}
 .input{display:flex;align-items:center;cursor:pointer}

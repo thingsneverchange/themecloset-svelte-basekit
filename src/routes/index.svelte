@@ -1,6 +1,6 @@
 <script>
 import Initialize from '$lib/Initialize.svelte'
-import Prompt from '$lib/ui/Prompt.svelte'
+import Input from '$lib/ui/Input.svelte'
 
 const confirm = () =>{
   alert('d')
@@ -8,4 +8,5 @@ const confirm = () =>{
 }
 </script>
 <Initialize theme="light">
+  <Input accept="number" />
 </Initialize>
