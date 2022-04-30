@@ -42,16 +42,27 @@ const click = () => {
     callback()
   }
 };
-const input = () =>{
-  dispatch('input')
-  if(accept == 'number') value = value.replace(/\D+/g, '')
-};
+const input = () => dispatch('input')
 const keypress = debounce((event: KeyboardEvent) => {
   if(event.key == 'Enter'){
     dispatch('enter')
   }
   dispatch('input')
 }, 500)
+
+const validator = (node, value) => {
+  let previousN = n
+  return {
+    update(value) {
+      if(accept == 'number'){
+        n = value === null || n < node.min ? previousN : parseInt(value)
+      }else{
+        value
+      }
+    }
+  }
+}
+
 </script>
 {#if withTitle}
   <span class="input_title">
@@ -64,6 +75,7 @@ const keypress = debounce((event: KeyboardEvent) => {
     <input
       disabled="{disabled ? disabled : null}"
       maxlength="{maxLength}"
+      use:validator={value}
       on:keypress="{keypress}"
       on:input="{input}"
       bind:this="{inputElement}"
@@ -78,6 +90,7 @@ const keypress = debounce((event: KeyboardEvent) => {
       {backgroundColor ? 'background-color:' + backgroundColor + ';' : ''} {full ? 'width:100%' : ''}"/>
   {:else}
     <textarea
+      use:validator={value}
       disabled="{disabled ? disabled : null}"
       maxlength="{maxLength}"
       on:input="{input}"
