@@ -43,12 +43,10 @@ const click = () => {
   }
 };
 const input = () =>{
-  console.log('asdf')
+  dispatch('input')
+  if(accept == 'number') value = value.replace(/\D+/g, '')
 };
 const keypress = debounce((event: KeyboardEvent) => {
-  if(type == 'number'){
-    value = value.replace(/\D+/g, '')
-  }
   if(event.key == 'Enter'){
     dispatch('enter')
   }
