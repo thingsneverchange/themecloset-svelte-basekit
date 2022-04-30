@@ -44,7 +44,7 @@ const click = () => {
 };
 const input = () => dispatch('input');
 const keypress = debounce((event: KeyboardEvent) => {
-  if(numberOnly){
+  if(type == 'number'){
     value = value.replace(/\D+/g, '')
   }
   if(event.key == 'Enter'){
