@@ -42,11 +42,14 @@ const click = () => {
     callback()
   }
 };
-const input = () => dispatch('input');
-const keypress = debounce((event: KeyboardEvent) => {
+const input = () = {
+  dispatch('input')
   if(type == 'number'){
     value = value.replace(/\D+/g, '')
   }
+};
+const keypress = debounce((event: KeyboardEvent) => {
+
   if(event.key == 'Enter'){
     dispatch('enter')
   }
