@@ -18,6 +18,7 @@ export let required : boolean = false;
 export let backgroundColor : string = undefined;
 export let borderColor : string =  undefined;
 export let disabled : boolean = false;
+export let numberOnly : boolean = false;
 
 let inputElement : HTMLElement;
 let isFocused: boolean = false;
@@ -43,6 +44,9 @@ const click = () => {
 };
 const input = () => dispatch('input');
 const keypress = debounce((event: KeyboardEvent) => {
+  if(numberOnly){
+    value = value.replace(/\D+/g, '')
+  }
   if(event.key == 'Enter'){
     dispatch('enter')
   }
