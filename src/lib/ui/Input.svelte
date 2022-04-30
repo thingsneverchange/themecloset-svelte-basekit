@@ -65,7 +65,6 @@ $: value, validate()
     { withTitle }
   </span>
 {/if}
-{value}
 <span class="input {size} {rounded ? 'rounded': ''}" class:disabled="{disabled}">
   {#if !textarea}
     <input
