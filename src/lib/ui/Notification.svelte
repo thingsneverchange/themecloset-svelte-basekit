@@ -63,7 +63,7 @@ $: $store.notification.show, normalizeNotification()
   </div>
 {/if}
 <style>
-.notification_container{position:fixed;top:20px;left:50%;margin-left:-150px;width:300px;}
+.notification_container{position:fixed;top:20px;left:50%;margin-left:-150px;width:300px;z-index:9999999}
 .notification_content{display:flex;align-items: top;justify-content: space-between}
 h4{font-size:8pt;font-weight:600;}
 p{opacity:0.8}
