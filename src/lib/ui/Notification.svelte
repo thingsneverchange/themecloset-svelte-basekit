@@ -11,7 +11,9 @@ interface Notification{
   title: boolean
 }
 let notifcationItems: Notification[] = [] as Notification[]
-
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 onMount( () : void => {
   let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
 
@@ -29,7 +31,7 @@ onMount( () : void => {
   }
 
 })
-const normalizeNotification = () => {
+const normalizeNotification = await () => {
   if($store.notification.show){
     notifcationItems.unshift({
       text: $store.notification.text,
@@ -37,10 +39,9 @@ const normalizeNotification = () => {
       show: true
     })
     notifcationItems = notifcationItems
-    setTimeout( () => {
+    await timeout(2000)
       notifcationItems.pop()
       notifcationItems = notifcationItems
-    }, 2000)
   }
 }
 $: $store.notification.show, normalizeNotification()
