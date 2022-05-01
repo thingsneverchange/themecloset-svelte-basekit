@@ -31,7 +31,7 @@ onMount( () : void => {
   }
 
 })
-const normalizeNotification = await () => {
+const normalizeNotification = async () => {
   if($store.notification.show){
     notifcationItems.unshift({
       text: $store.notification.text,
