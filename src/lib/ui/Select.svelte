@@ -2,7 +2,7 @@
 import Icon from '$lib/ui/Icon.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
-import { find } from 'lodash-es'
+import { find, uniqBy } from 'lodash-es'
 
 interface selectInput{
   name: string,
@@ -18,7 +18,7 @@ let opened : boolean = false;
 let placeholderInternal = placeholder
 
 options = [
-  ...options
+  ...uniqBy(options, 'value')
 ]
 
 const dispatch = createEventDispatcher();
