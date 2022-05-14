@@ -9,8 +9,8 @@ interface NotifyRedirectInput {
 
 export const NotifyRedirect = (input : NotifyRedirectInput) :void => {
 
-  setCookie('notifyMessageText', input.text)
-  setCookie('notifyMessageTitle', input.title)
+  setCookie('notifyMessageText', encodeURIComponenent(input.text))
+  setCookie('notifyMessageTitle', encodeURIComponenent(input.title))
 
   window.location.href = input.url
 
