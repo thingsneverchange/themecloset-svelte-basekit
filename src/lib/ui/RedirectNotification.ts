@@ -5,8 +5,6 @@ interface NotifyRedirectInput {
   text: string,
   title: string
 }
-
-
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -19,8 +17,8 @@ function setCookie(name,value,days) {
 
 export const NotifyRedirect = (input : NotifyRedirectInput) :void => {
 
-  setCookie('notifyMessageText', encodeURIComponenent(input.text), 240)
-  setCookie('notifyMessageTitle', encodeURIComponenent(input.title), 240)
+  setCookie('notifyMessageText', encodeURIComponent(input.text), 240)
+  setCookie('notifyMessageTitle', encodeURIComponent(input.title), 240)
 
   window.location.href = input.url
 
