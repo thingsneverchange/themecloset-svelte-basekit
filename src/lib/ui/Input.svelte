@@ -2,6 +2,7 @@
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte';
 import { debounce } from 'lodash-es'
+import Icon from '$lib/ui/Icon'
 export let placeholder : string = '';
 export let full : boolean = false;
 export let textarea : boolean = false;
