@@ -27,8 +27,8 @@ onMount( () : void => {
           return data
         })
     }, 500)
-    removeCookie('notifyMessageText')
-    removeCookie('notifyMessageTitle')
+    localStorage.removeItem('notifyMessageText')
+    localStorage.removeItem('notifyMessageTitle')
   }
 
 })
