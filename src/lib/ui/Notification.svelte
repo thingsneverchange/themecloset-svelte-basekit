@@ -15,14 +15,14 @@ function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 onMount( () : void => {
-  let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
+  let notifyMessageText = localStorage.getItem('notifyMessageText')
+  let notifyMessageTitle = localStorage.getItem('notifyMessageTitle')
 
   if(notifyMessageText){
-    console.log(decodeURIComponent(notifyMessageText), notifyMessageText)
     setTimeout( () => {
         store.update((data) => {
-          data.notification.text = decodeURIComponent(notifyMessageText)
-          data.notification.title = decodeURIComponent(notifyMessageTitle)
+          data.notification.text = notifyMessageText
+          data.notification.title = notifyMessageTitle
           data.notification.show = true
           return data
         })
