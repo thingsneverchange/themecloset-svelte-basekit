@@ -18,6 +18,7 @@ onMount( () : void => {
   let { notifyMessageText, notifyMessageTitle } = getCookies(document.cookie)
 
   if(notifyMessageText){
+    console.log(decodeURIComponent(notifyMessageText), notifyMessageText)
     setTimeout( () => {
         store.update((data) => {
           data.notification.text = decodeURIComponent(notifyMessageText)
