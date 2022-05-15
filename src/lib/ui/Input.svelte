@@ -112,7 +112,7 @@ $: value, validate()
 .inp{font-family:inherit;resize:none;}
 textarea.inp{min-height:80px;}
 .inp.spcaed{margin:5px 0px;}
-.inp{background-color:#3f3f3f;border:0px;padding: 12px 15px;font-size: 10pt;outline: none;color:inherit;}
+.inp{background-color:#3f3f3f;border:0px;padding: 10px 13px;font-size: 11pt;outline: none;color:inherit;}
 .rounded .inp{border-radius:5px;}
 .inp{opacity:0.8}
 .inp:focus{opacity:1}
