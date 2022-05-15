@@ -6,6 +6,7 @@ export let spacingLeft: number = 0;
 export let spacingRight: number = 0;
 export let spacingBottom: number = 0;
 export let align: string = 'left'
+export let height: string = 'auto'
 export let maxWidth: string = 'auto';
 export let center: boolean = false;
 export let backgroundColor: string = 'initial';
@@ -14,6 +15,7 @@ export let backgroundColor: string = 'initial';
 <div style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:100%;
+            height:{height};
             background-color: {backgroundColor};
             {center ? 'margin:auto;' : ''}
             max-width: {maxWidth};
