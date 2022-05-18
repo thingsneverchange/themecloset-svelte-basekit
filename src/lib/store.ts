@@ -5,6 +5,9 @@ export interface UiStoreInterface {
     text: string,
     title: string,
     show: boolean
+  },
+  loading:{
+    show: boolean
   }
 }
 

@@ -65,12 +65,12 @@ $: $store.notification.show, normalizeNotification()
   </div>
 {/if}
 <style>
-.notification_container{position:fixed;top:20px;left:50%;margin-left:-150px;width:300px;z-index:9999999}
+.notification_container{position:fixed;top:20px;left:50%;margin-left:-150px;width:300px;z-index:899999998}
 .notification_content{display:flex;align-items: top;justify-content: space-between}
 h4{font-size:8pt;font-weight:600;}
 p{opacity:0.8}
 .notification{
-	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;border-radius:7px;padding:15px 25px;font-size:10pt;z-index:999999;margin-bottom:20px;}
+	box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;border-radius:7px;padding:15px 25px;font-size:10pt;z-index:899999998;margin-bottom:20px;}
 :global(.theme-light .notification){background-color:#fff;color:#222;}
 :global(.theme-dark .notification){background-color:#222;color:#fff;}
 

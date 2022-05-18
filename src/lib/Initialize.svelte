@@ -16,10 +16,10 @@ import FullLoading from '$lib/ui/FullLoading.svelte'
   <link href="{googleFont}" rel="stylesheet">
 {/if}
 </svelte:head>
-<FullLoading/>
 
 <div id="themecloset_app" class="theme-{theme}" style="font-family: {fontFamily};font-size: {fontSize}">
 
+  <FullLoading/>
       <Notification />
 
   <slot />
