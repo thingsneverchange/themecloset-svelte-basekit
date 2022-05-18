@@ -27,6 +27,6 @@ import FullLoading from '$lib/ui/FullLoading.svelte'
 </div>
 
 <style>
-:global(body, html){min-height:100%}
+:global(body, html){min-height:100%;height:100%}
 #themecloset_app{min-height:100%;}
 </style>
