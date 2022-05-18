@@ -13,6 +13,7 @@ export let left: number = 0;
 export let maxWidth: string = 'auto';
 export let center: boolean = false;
 export let backgroundColor: string = 'initial';
+export let rounded: boolean = false;
 </script>
 
 <div style="padding:{spacingHorizontal}px {spacing}px;
@@ -22,6 +23,7 @@ export let backgroundColor: string = 'initial';
             {fixed ? 'top:' + top + 'px;': '' }
             {fixed ? 'left:' + left + 'px;': '' }
             height:{height};
+            {rounded ? 'border-radius:10px;' : ''}
             background-color: {backgroundColor};
             {center ? 'margin:auto;' : ''}
             max-width: {maxWidth};
