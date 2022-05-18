@@ -14,6 +14,10 @@ export let maxWidth: string = 'auto';
 export let center: boolean = false;
 export let backgroundColor: string = 'initial';
 export let rounded: boolean = false;
+export let borderBottom: string = '';
+export let borderLeft: string = '';
+export let borderRight: string = '';
+export let borderTop: string = '';
 </script>
 
 <div style="padding:{spacingHorizontal}px {spacing}px;
@@ -22,6 +26,10 @@ export let rounded: boolean = false;
             {fixed ? 'position:fixed;': ''}
             {fixed ? 'top:' + top + 'px;': '' }
             {fixed ? 'left:' + left + 'px;': '' }
+            {borderBottom ? 'border-bottom:' +  borderBottom + ';': '' }
+            {borderTop ? 'border-top:' +  borderTop  + ';': '' }
+            {borderRight ? 'border-right:' +  borderRight  + ';': '' }
+            {borderLeft ? 'border-left:' +  borderLeft  + ';': '' }
             height:{height};
             {rounded ? 'border-radius:10px;' : ''}
             background-color: {backgroundColor};
