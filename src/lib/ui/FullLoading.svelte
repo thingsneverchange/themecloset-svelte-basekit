@@ -1,7 +1,7 @@
 <script>
 import { store } from '$lib/store'
 </script>
-{#if store.loading.show }
+{#if $store.loading.show }
   <div class="loadingTooltip">
     <p style="color:#fff;font-weight:600;">로드중</p><div class="loader">Loading...</div>
   </div>
