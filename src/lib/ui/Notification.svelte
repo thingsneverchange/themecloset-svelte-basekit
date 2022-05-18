@@ -11,7 +11,7 @@ interface Notification{
   show: boolean,
   title: boolean
 }
-let notifcationItems: Notification[] = [] as Notification[]
+let notificationItems: Notification[] = [] as Notification[]
 function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -43,22 +43,22 @@ const normalizeNotification = async () => {
   })
 
   if($store.notification.show && isDuplicate == false){
-    notifcationItems.unshift({
+    notificationItems.unshift({
       text: $store.notification.text,
       title: $store.notification.title,
       show: true
     })
-    notifcationItems = notifcationItems
+    notificationItems = notificationItems
     await timeout(2000)
-    notifcationItems.pop()
-    notifcationItems = notifcationItems
+    notificationItems.pop()
+    notificationItems = notificationItems
   }
 }
 $: $store.notification.show, normalizeNotification()
 </script>
-{#if notifcationItems.length != 0}
+{#if notificationItems.length != 0}
   <div class="notification_container">
-    {#each notifcationItems as notification, index}
+    {#each notificationItems as notification, index}
         <div class="notification" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
           <div class="notification_content">
             <div class="head">
