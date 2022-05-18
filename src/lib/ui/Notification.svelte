@@ -3,6 +3,7 @@ import { store } from '$lib/store'
 import { fly } from 'svelte/transition';
 import Icon from '$lib/ui/Icon.svelte'
 import { onMount } from 'svelte'
+import { find } from 'lodash-es'
 import { getCookies, setCookie, removeCookie } from '$lib/utils/cookies';
 
 interface Notification{
@@ -33,7 +34,15 @@ onMount( () : void => {
 
 })
 const normalizeNotification = async () => {
-  if($store.notification.show){
+
+  let isDuplicate = false;
+
+  isDuplicate = find(notificationItems, {
+    text: $store.notification.text,
+    title: $store.notification.title
+  })
+
+  if($store.notification.show && isDuplicate == false){
     notifcationItems.unshift({
       text: $store.notification.text,
       title: $store.notification.title,
@@ -41,8 +50,8 @@ const normalizeNotification = async () => {
     })
     notifcationItems = notifcationItems
     await timeout(2000)
-      notifcationItems.pop()
-      notifcationItems = notifcationItems
+    notifcationItems.pop()
+    notifcationItems = notifcationItems
   }
 }
 $: $store.notification.show, normalizeNotification()
