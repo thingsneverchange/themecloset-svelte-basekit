@@ -7,6 +7,7 @@ import { store } from '$lib/store'
 import './assets/css/global.css'
 import './assets/css/reset.css'
 import Notification from '$lib/ui/Notification.svelte'
+import FullLoading from '$lib/ui/FullLoading.svelte'
 </script>
 <svelte:head>
 {#if googleFont}
@@ -15,9 +16,11 @@ import Notification from '$lib/ui/Notification.svelte'
   <link href="{googleFont}" rel="stylesheet">
 {/if}
 </svelte:head>
+<FullLoading/>
+
 <div id="themecloset_app" class="theme-{theme}" style="font-family: {fontFamily};font-size: {fontSize}">
 
       <Notification />
-      
+
   <slot />
 </div>

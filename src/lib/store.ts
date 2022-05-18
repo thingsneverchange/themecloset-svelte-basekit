@@ -13,5 +13,8 @@ export const store = writable<UiStoreInterface>({
     text: '',
     title: 'New message',
     show: false
+  },
+  loading:{
+    show: false
   }
 })
