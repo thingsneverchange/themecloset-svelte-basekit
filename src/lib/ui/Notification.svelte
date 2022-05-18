@@ -42,7 +42,7 @@ const normalizeNotification = async () => {
     title: $store.notification.title
   })
 
-  if($store.notification.show && isDuplicate == false){
+  if($store.notification.show && ! isDuplicate){
     notificationItems.unshift({
       text: $store.notification.text,
       title: $store.notification.title,
