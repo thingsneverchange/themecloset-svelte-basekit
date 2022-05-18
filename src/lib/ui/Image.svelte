@@ -24,6 +24,7 @@ export let cdnDisabled : boolean = false;;
 export let alt : string = '';
 export let preload : boolean = false;
 export let onload : Function = null;
+export let circled : boolean = false;
 export let rounded: boolean = false;
 export let imageColor : ColorObject = {
   r: 174, g: 174, b: 174
@@ -68,7 +69,7 @@ onMount( async() : Promise<void> => {
 </script>
 
 {#if preload == false}
-  <div class="imageContent {orientation} {isFixedSize ? 'fixedSize' : ''} {rounded ? 'rounded' : ''}" style="{applySizeElement}">
+  <div class="imageContent {orientation} {isFixedSize ? 'fixedSize' : ''} {rounded ? 'rounded' : ''} {circled ? 'circled' : ''}" style="{applySizeElement}">
 
     <div style="{Object.keys(imageColor).length === 0 ? '' : `background-color:rgb(${imageColor.r},${imageColor.g},${imageColor.b});` } width:{width != 'auto' ? width+'px' : '100%'}; height:{height != 'auto' ? height+'px' : '100%'}">
        {#if src}
@@ -101,7 +102,7 @@ onMount( async() : Promise<void> => {
 	}
 }
 .imageContent.rounded{border-radius:5px;}
-
+.imageContent.circled{border-radius:200px;}
 img{display:block;max-width:100%;}
 .imageContent img.unload, .imageContent img.onload{opacity: 0}
 .imageContent img.loaded{
