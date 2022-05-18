@@ -1,6 +1,9 @@
 <script>
-export let show = false;
+export let show = true;
+export let headerTitle = ''
 import { fly } from 'svelte/transition';
+import Paragraph from '$lib/ui/Paragraph.svelte'
+import Link from '$lib/ui/Link.svelte'
 
 const toggleModal = () =>{
 	show = show ? false : true
@@ -8,6 +11,18 @@ const toggleModal = () =>{
 </script>
 {#if show}
 	<div class="modal" in:fly="{{ y: 300, duration: 500 }}" out:fly="{{ y: 300, duration: 400 }}">
+		{#if headerTitle != ''}
+			<div class="modal_header">
+				<Paragraph size="{18}">
+					{headerTitle}
+				</Paragraph>
+				<Link on:click="{toggleModal}">
+					<Paragraph size="{14}" faded>
+						닫기
+					</Paragraph>
+				</Link>
+			</div>
+		{/if}
 		<div class="modal_content">
 			<slot />
 		</div>
@@ -24,4 +39,6 @@ const toggleModal = () =>{
 .modal{width:100%;left:0px;bottom:0px;position:fixed;z-index:2999999998;}
 :global(.theme-light .modal){background-color:#fff;}
 :global(.theme-dark .modal){background-color:#222;}
+.modal_header{padding:20px;padding-bottom:0px;}
+.modal_header{display:flex;justify-content: space-between}
 </style>
