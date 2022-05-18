@@ -6,9 +6,6 @@ const toggleModal = () =>{
 	show = show ? false : true
 }
 </script>
-<div class="trigger" on:click="{toggleModal}">
-	trigger
-</div>
 {#if show}
 	<div class="modal" in:fly="{{ y: 300, duration: 500 }}" out:fly="{{ y: 300, duration: 400 }}">
 		<div class="modal_content">
