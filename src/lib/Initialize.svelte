@@ -3,6 +3,7 @@ export let fontFamily: string = 'arial'
 export let fontSize: string  = '10pt'
 export let googleFont : string;
 export let theme: 'light' | 'dark' = 'dark'
+export let backgroundColor: string = '#fff'
 import { store } from '$lib/store'
 import './assets/css/global.css'
 import './assets/css/reset.css'
@@ -17,10 +18,14 @@ import FullLoading from '$lib/ui/FullLoading.svelte'
 {/if}
 </svelte:head>
 
-<div id="themecloset_app" class="theme-{theme}" style="font-family: {fontFamily};font-size: {fontSize}">
+<div id="themecloset_app" class="theme-{theme}" style="font-family: {fontFamily};font-size: {fontSize};background-color:{backgroundColor}">
 
   <FullLoading/>
       <Notification />
 
   <slot />
 </div>
+
+<style>
+#themecloset_app{min-height:100%;}
+</style>
