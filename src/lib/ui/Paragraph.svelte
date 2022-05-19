@@ -28,7 +28,7 @@ let fontSize: string = size.toString() + 'px'
 </script>
 <svelte:element
   this="{as}" class="{isContent ? 'isContent': ''}paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-  style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacing}px {spacingHorizontal}px;color:{color};text-align:{align}">
+  style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacingHorizontal}px {spacing}px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>
 
