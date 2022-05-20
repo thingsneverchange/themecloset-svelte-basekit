@@ -18,7 +18,7 @@ const dispatch = createEventDispatcher();
 const sendLink = (event: MouseEvent) : void => {
  event.preventDefault()
  dispatch('click')
- if(href){
+ if(href && target != '_blank'){
    goto(href)
  }
 }
