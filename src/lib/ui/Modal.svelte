@@ -37,7 +37,7 @@ const toggleModal = () =>{
 .trigger{cursor:pointer}
 .lightroom{background-color:rgba(0,0,0,0.4);position:fixed;top:0px;z-index:399999998;left:0px;width:100%;height:100%;cursor:pointer}
 .modal{width:100%;left:0px;bottom:0px;position:fixed;z-index:499999998;overflow: scroll;
-    height: 100%;}
+    max-height: 100%;}
 :global(.theme-light .modal){background-color:#fff;}
 :global(.theme-dark .modal){background-color:#222;}
 .modal_header{padding:20px;padding-bottom:0px;}
