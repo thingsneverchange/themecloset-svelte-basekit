@@ -9,6 +9,8 @@ import './assets/css/global.css'
 import './assets/css/reset.css'
 import Notification from '$lib/ui/Notification.svelte'
 import FullLoading from '$lib/ui/FullLoading.svelte'
+import Prompt from '$lib/ui/Prompt.svelte'
+
 </script>
 <svelte:head>
 {#if googleFont}
@@ -21,7 +23,8 @@ import FullLoading from '$lib/ui/FullLoading.svelte'
 <div id="themecloset_app" class="theme-{theme}" style="font-family: {fontFamily};font-size: {fontSize};background-color:{backgroundColor}">
 
   <FullLoading/>
-      <Notification />
+  <Notification />
+  <Prompt />
 
   <slot />
 </div>

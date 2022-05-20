@@ -8,43 +8,44 @@ import Button from '$lib/ui/Button.svelte'
 import { getCookies, setCookie, removeCookie } from '$lib/utils/cookies';
 import { createEventDispatcher } from 'svelte';
 
-export let title;
-export let show = false;
-export let subTitle;
 const dispatch = createEventDispatcher();
 const confirm = (event) :void => {
-  dispatch('confirm', event.detail)
+  $store.prompt.callback()
   toggle()
 }
 const toggle = () :void => {
-  show = show ? false : true
+
+  store.update((data) => {
+    data.prompt.show = false
+    data.prompt.title = ''
+    data.prompt.subTitle = ''
+    return data
+  })
+
 }
 
 </script>
 <div class="prompt_container">
-  {#if show}
-  <div class="prompt" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
-    <div class="content">
-      <div class="head">
-        {#if title}
-          <h3>{title}</h3>
-        {/if}
-        {#if subTitle}
-          <h4>{subTitle}</h4>
-        {/if}
-        <span on:click="{confirm}">
-          예
-        </span>
-        <span on:click="{toggle}">
-          아니오
-        </span>
+  {#if $store.prompt.show}
+    <div class="prompt" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
+      <div class="content">
+        <div class="head">
+          {#if $store.prompt.title}
+            <h3>{$store.prompt.title}</h3>
+          {/if}
+          {#if $store.prompt.subTitle}
+            <h4>{$store.prompt.subTitle}</h4>
+          {/if}
+          <span on:click="{confirm}">
+            예
+          </span>
+          <span on:click="{toggle}">
+            아니오
+          </span>
+        </div>
       </div>
     </div>
-  </div>
   {/if}
-  <div class="promot_trigger" on:click="{toggle}">
-    <slot/>
-  </div>
 </div>
 <style>
 h3{font-size:11.5pt;padding-bottom:10px;font-weight:600;}

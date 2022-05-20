@@ -8,6 +8,12 @@ export interface UiStoreInterface {
   },
   loading:{
     show: boolean
+  },
+  prompt:{
+    title: string,
+    subTitle: string,
+    show: boolean,
+    callback: Function
   }
 }
 
@@ -19,5 +25,11 @@ export const store = writable<UiStoreInterface>({
   },
   loading:{
     show: false
+  },
+  prompt: {
+    title: '',
+    subTitle: '',
+    show: false,
+    callback: () => {}
   }
 })
