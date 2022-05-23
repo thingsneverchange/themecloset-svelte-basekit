@@ -6,7 +6,8 @@ export let withLine :boolean = false;
 export let goBack : boolean = false;
 export let href : string = '';
 export let target: string = undefined;
-export let prefetch: boolean = false
+export let prefetch: boolean = false;
+export let forceful: boolean = false
 afterNavigate((navigaton) => {
  if(navigaton.from && goBack){
    href = navigaton.from.pathname
@@ -16,9 +17,11 @@ afterNavigate((navigaton) => {
 const dispatch = createEventDispatcher();
 
 const sendLink = (event: MouseEvent) : void => {
- event.preventDefault()
+  if(forceful == false){
+   event.preventDefault()
+ }
  dispatch('click')
- if(href && target != '_blank'){
+ if(href && target != '_blank' && forceful == false){
    goto(href)
  }
 }
