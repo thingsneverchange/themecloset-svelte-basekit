@@ -11,9 +11,7 @@ const toggleModal = () =>{
 	show = show ? false : true
 }
 const onCancel = () => {
-	if(show == false){
 		dispatch('cancel')
-	}
 }
 </script>
 {#if show}
