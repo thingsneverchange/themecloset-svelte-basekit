@@ -4,9 +4,14 @@ export let headerTitle = ''
 import { fly } from 'svelte/transition';
 import Paragraph from '$lib/ui/Paragraph.svelte'
 import Link from '$lib/ui/Link.svelte'
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
 
 const toggleModal = () =>{
 	show = show ? false : true
+	if(show == false){
+		dispatch('cancel')
+	}
 }
 </script>
 {#if show}
