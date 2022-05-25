@@ -9,6 +9,8 @@ const dispatch = createEventDispatcher();
 
 const toggleModal = () =>{
 	show = show ? false : true
+}
+const onCancel = () => {
 	if(show == false){
 		dispatch('cancel')
 	}
@@ -21,7 +23,7 @@ const toggleModal = () =>{
 				<Paragraph size="{18}">
 					{headerTitle}
 				</Paragraph>
-				<Link on:click="{toggleModal}">
+				<Link on:click="{toggleModal}" on:click="{onCancel}">
 					<Paragraph size="{14}" faded>
 						닫기
 					</Paragraph>
