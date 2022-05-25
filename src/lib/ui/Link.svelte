@@ -19,6 +19,8 @@ const dispatch = createEventDispatcher();
 const sendLink = (event: MouseEvent) : void => {
   if(forceful == false){
    event.preventDefault()
+ }else{
+   window.location.href = href
  }
  dispatch('click')
  if(href && target != '_blank' && forceful == false){
