@@ -20,6 +20,8 @@ onMount( () : void => {
   let notifyMessageTitle = localStorage.getItem('notifyMessageTitle')
 
   if(notifyMessageText){
+    localStorage.removeItem('notifyMessageText')
+    localStorage.removeItem('notifyMessageTitle')
     setTimeout( () => {
         store.update((data) => {
           data.notification.text = notifyMessageText
@@ -28,8 +30,6 @@ onMount( () : void => {
           return data
         })
     }, 500)
-    localStorage.removeItem('notifyMessageText')
-    localStorage.removeItem('notifyMessageTitle')
   }
 
 })
