@@ -24,10 +24,10 @@ onMount( () : void => {
       data.notification.text = notifyMessageText
       data.notification.title = notifyMessageTitle
       data.notification.show = true
-      localStorage.removeItem('notifyMessageText')
-      localStorage.removeItem('notifyMessageTitle')
       return data
     })
+    localStorage.removeItem('notifyMessageText')
+    localStorage.removeItem('notifyMessageTitle')
   }
 
 })
@@ -50,6 +50,13 @@ const normalizeNotification = async () => {
     await timeout(2000)
     notificationItems.pop()
     notificationItems = notificationItems
+
+    store.update((data) => {
+      data.notification.text = ''
+      data.notification.title = ''
+      data.notification.show = false
+      return data
+    })
   }
 }
 $: $store.notification.show, normalizeNotification()
