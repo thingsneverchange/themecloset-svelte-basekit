@@ -20,16 +20,14 @@ onMount( () : void => {
   let notifyMessageTitle = localStorage.getItem('notifyMessageTitle')
 
   if(notifyMessageText){
+    store.update((data) => {
+      data.notification.text = notifyMessageText
+      data.notification.title = notifyMessageTitle
+      data.notification.show = true
+      return data
+    })
     localStorage.removeItem('notifyMessageText')
     localStorage.removeItem('notifyMessageTitle')
-    setTimeout( () => {
-        store.update((data) => {
-          data.notification.text = notifyMessageText
-          data.notification.title = notifyMessageTitle
-          data.notification.show = true
-          return data
-        })
-    }, 500)
   }
 
 })
@@ -59,6 +57,7 @@ $: $store.notification.show, normalizeNotification()
 {#if notificationItems.length != 0}
   <div class="notification_container">
     {#each notificationItems as notification, index}
+      {#key index}
         <div class="notification" in:fly="{{ y: -30, duration: 200 }}" out:fly="{{ y: -30, duration: 200 }}">
           <div class="notification_content">
             <div class="head">
@@ -70,6 +69,7 @@ $: $store.notification.show, normalizeNotification()
             </div>
           </div>
         </div>
+      {/key}
     {/each}
   </div>
 {/if}
