@@ -24,10 +24,10 @@ onMount( () : void => {
       data.notification.text = notifyMessageText
       data.notification.title = notifyMessageTitle
       data.notification.show = true
+      localStorage.removeItem('notifyMessageText')
+      localStorage.removeItem('notifyMessageTitle')
       return data
     })
-    localStorage.removeItem('notifyMessageText')
-    localStorage.removeItem('notifyMessageTitle')
   }
 
 })
