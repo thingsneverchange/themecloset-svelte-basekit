@@ -140,6 +140,9 @@ export const _FetchClient = (config: ApiCall) => {
 export const _FetchServer = (config: ApiCall) => {
 
   let origin = import.meta.env.VITE_LOCAL_ENDPOINT
+  if(config.origin){
+    origin = config.origin
+  }
   let instance : AxiosInstance = axios.create({ baseURL: origin })
   instance.interceptors.request.use(function (config) {
     return config;
