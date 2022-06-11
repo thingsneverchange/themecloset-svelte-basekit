@@ -1,5 +1,5 @@
-import Cookies from './cookies.ts'
-import Fetch from './fetch.ts'
+import Cookies from './cookies'
+import Fetch from './fetch'
 
 export {
   Cookies,
