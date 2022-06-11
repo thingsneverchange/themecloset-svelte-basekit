@@ -19,9 +19,10 @@ export let borderLeft: string = '';
 export let borderRight: string = '';
 export let borderTop: string = '';
 export let display: string = 'initial';
+export let style: string = '';
 </script>
 
-<div style="padding:{spacingHorizontal}px {spacing}px;
+<div style="{style};padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:100%;
             display: {display};
