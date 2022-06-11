@@ -2,7 +2,7 @@
 export let width : string = '100%';
 export let height : string = '200';
 export let src : string;
-
+ 
 </script>
 
 {#if src}
