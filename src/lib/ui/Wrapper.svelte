@@ -18,7 +18,7 @@ export let borderBottom: string = '';
 export let borderLeft: string = '';
 export let borderRight: string = '';
 export let borderTop: string = '';
-export let display: string = 'initial';
+export let display: string = 'block';
 export let style: string = '';
 </script>
 
