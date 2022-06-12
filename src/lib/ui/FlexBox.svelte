@@ -27,5 +27,5 @@ const makeClick = () :void => {
 :global(.fixed-width-3 > *){flex:0 0 33.3333%;}
 :global(.fixed-width-5 > *){flex:0 0 20%;}
 :global(.fixed-width-6 > *){flex:0 0 16.6666%;}
-:global(.flexbox.ellipsis > *{white-space: nowrap;text-overflow:ellipsis;overflow:hidden})
+:global(.flexbox.ellipsis > *){white-space: nowrap;text-overflow:ellipsis;overflow:hidden}
 </style>
