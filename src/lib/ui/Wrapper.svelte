@@ -20,9 +20,10 @@ export let borderRight: string = '';
 export let borderTop: string = '';
 export let display: string = 'block';
 export let style: string = '';
+export let element : HTMLElement;
 </script>
 
-<div style="{style};padding:{spacingHorizontal}px {spacing}px;
+<div bind:this="{element}" style="{style};padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:100%;
             display: {display};
