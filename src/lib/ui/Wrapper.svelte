@@ -21,9 +21,13 @@ export let borderTop: string = '';
 export let display: string = 'block';
 export let style: string = '';
 export let element : HTMLElement;
+
+let classNames : string = '';
+export { classNames as class }
+
 </script>
 
-<div bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
+<div class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:100%;
             display: {display};
