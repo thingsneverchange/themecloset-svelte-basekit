@@ -23,7 +23,7 @@ export let style: string = '';
 export let element : HTMLElement;
 </script>
 
-<div bind:this="{element}" style="{style};padding:{spacingHorizontal}px {spacing}px;
+<div bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:100%;
             display: {display};
@@ -42,6 +42,7 @@ export let element : HTMLElement;
             {spacingTop != 0 ? 'padding-top:' + spacingTop.toString() + "px;" : ''}
             {spacingLeft != 0 ? 'padding-left:' + spacingLeft.toString() + "px;" : ''}
             {spacingRight != 0 ? 'padding-right:' + spacingRight.toString() + "px;" : ''}
-            {spacingBottom != 0 ? 'padding-bottom:' + spacingBottom.toString() + "px;" : ''}">
+            {spacingBottom != 0 ? 'padding-bottom:' + spacingBottom.toString() + "px;" : ''}
+            {style}">
   <slot />
 </div>
