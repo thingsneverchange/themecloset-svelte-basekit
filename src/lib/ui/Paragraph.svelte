@@ -30,7 +30,6 @@ if(color == null){
 
 let fontSize: string = size.toString() + 'px'
 </script>
-{$store.theme}
 {#key $store.theme}
   <svelte:element
     this="{as}" class="{isContent ? 'isContent': ''} paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
