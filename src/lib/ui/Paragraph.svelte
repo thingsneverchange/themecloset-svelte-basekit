@@ -1,11 +1,12 @@
 <script type="ts">
 
+import { store } from '$lib/store'
 export let as : 'p' | 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' = 'p'
 export let size : number = 0
 export let faded: boolean = false;
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
-export let color: string = '#000'
+export let color: string = null
 export let capitalize: boolean = false;
 export let align : string = 'left'
 export let bold : boolean = false
@@ -23,11 +24,15 @@ if(size == 0){
   if(as == 'p') size = 14
 }
 if(isContent) as = 'div'
+if(color == null){
+  color = '#222'
+  if($store.theme == 'dark') color = '#fff'
+}
 
 let fontSize: string = size.toString() + 'px'
 </script>
 <svelte:element
-  this="{as}" class="{isContent ? 'isContent': ''}paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
+  this="{as}" class="{isContent ? 'isContent': ''} paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
   style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacingHorizontal}px {spacing}px;color:{color};text-align:{align}">
   <slot/>
 </svelte:element>

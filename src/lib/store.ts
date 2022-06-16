@@ -9,6 +9,7 @@ export interface UiStoreInterface {
   loading:{
     show: boolean
   },
+  theme: string,
   prompt:{
     title: string,
     subTitle: string,
@@ -23,6 +24,7 @@ export const store = writable<UiStoreInterface>({
     title: 'New message',
     show: false
   },
+  theme: 'light',
   loading:{
     show: false
   },

@@ -11,8 +11,20 @@ import Notification from '$lib/ui/Notification.svelte'
 import FullLoading from '$lib/ui/FullLoading.svelte'
 import Prompt from '$lib/ui/Prompt.svelte'
 
+store.update((data) => {
+  data.theme = theme
+  return data
+})
+if(theme == 'dark'){
+  backgroundColor = '#222'
+}
 </script>
 <svelte:head>
+{#if theme == 'dark'}
+  <style>
+    body, html {background-color:#222}
+  </style>
+{/if}
 {#if googleFont}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +42,7 @@ import Prompt from '$lib/ui/Prompt.svelte'
 </div>
 
 <style>
+:global(body, html){min-height:100%;height:100%}
 :global(body, html){min-height:100%;height:100%}
 #themecloset_app{min-height:100%;}
 </style>
