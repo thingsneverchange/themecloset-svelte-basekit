@@ -28,9 +28,10 @@ if(color == null){
   color = '#222'
   if($store.theme == 'dark') color = '#fff'
 }
- 
+
 let fontSize: string = size.toString() + 'px'
 </script>
+{$store.theme}
 {#key $store.theme}
   <svelte:element
     this="{as}" class="{isContent ? 'isContent': ''} paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
