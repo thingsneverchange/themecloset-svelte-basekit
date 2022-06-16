@@ -24,7 +24,7 @@ import(`./images/${name}.svg?raw`).then( (module) => {
 {@html iconSvg}
 
 <style>
-.theme-dark svg[colornotdefined=true]{fill:#fff}
-.theme-light svg[colornotdefined=true]{fill:#222}
+.theme-dark svg[colornotdefined=true]{fill:#fff !important}
+.theme-light svg[colornotdefined=true]{fill:#222 !important}
 :global(svg){padding:0px;margin:0px;box-sizing:border-box;}
 </style>
