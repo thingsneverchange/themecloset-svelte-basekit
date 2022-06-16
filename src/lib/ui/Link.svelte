@@ -25,6 +25,8 @@ const sendLink = (event: MouseEvent) : void => {
  dispatch('click')
  if(href && target != '_blank' && forceful == false){
    goto(href)
+ }else{
+  window.open(href)
  }
 }
 </script>
