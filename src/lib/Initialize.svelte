@@ -20,11 +20,6 @@ if(theme == 'dark'){
 }
 </script>
 <svelte:head>
-{#if theme == 'dark'}
-  <style>
-    body, html {background-color:#222;color:#fff}
-  </style>
-{/if}
 {#if googleFont}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +37,5 @@ if(theme == 'dark'){
 </div>
 
 <style>
-:global(body, html){min-height:100%;height:100%}
-#themecloset_app{min-height:100%;}
+:global(body, html, #themecloset_app, body > div){min-height:100%;height:100%}
 </style>
