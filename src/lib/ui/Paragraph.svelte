@@ -25,8 +25,7 @@ if(size == 0){
 }
 if(isContent) as = 'div'
 if(color == null){
-  color = '#222'
-  if($store.theme == 'dark') color = '#fff'
+  color = 'inherit'
 }
 
 let fontSize: string = size.toString() + 'px'
