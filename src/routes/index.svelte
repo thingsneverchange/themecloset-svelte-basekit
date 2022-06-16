@@ -12,4 +12,5 @@ store.update((data) => {
 </script>
 <Initialize theme="dark">
 	<Border />
+	<Paragraph>sadfsadafd</Paragraph>
 </Initialize>

@@ -31,11 +31,13 @@ if(color == null){
 
 let fontSize: string = size.toString() + 'px'
 </script>
-<svelte:element
-  this="{as}" class="{isContent ? 'isContent': ''} paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-  style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacingHorizontal}px {spacing}px;color:{color};text-align:{align}">
-  <slot/>
-</svelte:element>
+{#key $store.theme}
+  <svelte:element
+    this="{as}" class="{isContent ? 'isContent': ''} paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
+    style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacingHorizontal}px {spacing}px;color:{color};text-align:{align}">
+    <slot/>
+  </svelte:element>
+{/key}
 
 <style>
   .isContent{line-height:190%}
