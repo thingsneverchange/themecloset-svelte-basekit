@@ -28,7 +28,7 @@ if(color == null){
   color = '#222'
   if($store.theme == 'dark') color = '#fff'
 }
-
+ 
 let fontSize: string = size.toString() + 'px'
 </script>
 {#key $store.theme}
