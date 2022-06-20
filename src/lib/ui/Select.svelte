@@ -93,13 +93,6 @@ onMount( () => {
 
   {#if opened && options && options.length != 0}
     <div class="options">
-      {#if value != null}
-        <div class="option" on:click="{() => {
-					changeValue({value: null, name: placeholder})
-				}}">
-          {placeholder}
-        </div>
-      {/if}
 
       {#each options as option}
         <div class="option" on:click="{(() => {
