@@ -1,5 +1,6 @@
 <script type="ts">
-import Icon from '$lib/ui/Icon.svelte'
+//import Icon from '$lib/ui/Icon.svelte'
+import { Wrapper, Spacer, Paragraph, Button, Link, FlexBox, Icon, Border, Arrow, Image, Price } from '@themecloset/svelte-basekit/ui'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
 import { find, uniqBy } from 'lodash-es'
@@ -19,7 +20,7 @@ let opened : boolean = false;
 let placeholderInternal = placeholder
 
 options = [
-  ...uniqBy(options, [valueNameIdentifier])
+  ...uniqBy(options, valueNameIdentifier)
 ]
 
 const dispatch = createEventDispatcher();
@@ -32,7 +33,7 @@ if(value != null && options.length != 0){
 }
 
 const changeValue = (val: any) :void => {
-  value = val.value
+  value = val[valueNameIdentifier]
   placeholderInternal = val.name
   toggle();
   change();
@@ -54,7 +55,7 @@ onMount( () => {
 
   if(options.length > 0 && chooseFirstDefault){
     if(value == 0 || value == null){
-      changeValue(options[0].value)
+      changeValue(options[0][valueNameIdentifier])
     }
   }
 
@@ -92,12 +93,10 @@ onMount( () => {
 
   {#if opened && options && options.length != 0}
     <div class="options">
-
-      {#if value == null}
-        <div class="option" on:click="changeValue({
-          value: null,
-          name: placeholder,
-        })">
+      {#if value != null}
+        <div class="option" on:click="{() => {
+					changeValue({value: null, name: placeholder})
+				}}">
           {placeholder}
         </div>
       {/if}
