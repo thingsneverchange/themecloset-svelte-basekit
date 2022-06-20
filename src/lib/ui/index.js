@@ -16,6 +16,7 @@ import Arrow from './Arrow.svelte'
 import Border from './Border.svelte'
 import FullLoading from './FullLoading.svelte'
 import Prompt from './Prompt.svelte'
+import Price from './Price.svelte'
 import Modal from './Modal.svelte'
 import { NotifyRedirect } from './RedirectNotification'
 
@@ -39,5 +40,6 @@ export {
   Border,
   FullLoading,
   NotifyRedirect,
-  Prompt
+  Prompt,
+  Price
 }
