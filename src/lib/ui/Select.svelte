@@ -13,20 +13,21 @@ export let options : selectInput[];
 export let value : number | string;
 export let placeholder : string = 'Select Option'
 export let chooseFirstDefault: boolean = false
+export let valueNameIdentifier: string = 'value'
 
 let opened : boolean = false;
 let placeholderInternal = placeholder
 
 options = [
-  ...uniqBy(options, 'value')
+  ...uniqBy(options, [valueNameIdentifier])
 ]
 
 const dispatch = createEventDispatcher();
 const change = () => dispatch('change');
 
 if(value != null && options.length != 0){
-  if(find(options, {'value': value})){
-    placeholderInternal = find(options, {'value': value}).name
+  if(find(options, {[valueNameIdentifier]: value})){
+    placeholderInternal = find(options, {[valueNameIdentifier]: value}).name
   }
 }
 
@@ -91,12 +92,15 @@ onMount( () => {
 
   {#if opened && options && options.length != 0}
     <div class="options">
-      
-      <div class="option" on:click="{(() => {
-        value = null
-      })}">
-        {placeholder}
-      </div>
+
+      {#if value == null}
+        <div class="option" on:click="changeValue({
+          value: null,
+          name: placeholder,
+        })">
+          {placeholder}
+        </div>
+      {/if}
 
       {#each options as option}
         <div class="option" on:click="{(() => {
