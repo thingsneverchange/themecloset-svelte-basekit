@@ -10,7 +10,7 @@ const loadImage = (url: string): Promise<HTMLImageElement> => {
     image.addEventListener('load', () => {
 
       resolve(image);
-    }); 
+    });
     image.src = url;
   });
 }
@@ -105,7 +105,7 @@ img{display:block;max-width:100%;}
 .imageContent img.unload, .imageContent img.onload{opacity: 0}
 .imageContent img.loaded{
   opacity:1;
-	animation: slowDown 0.4s linear;
+	animation: slowDown 0s linear;
 }
 .imageContent.horizontal:not(.fixedSize) img{width:100%;height:auto;}
 .imageContent.landscape:not(.fixedSize) img{height:100%;width:auto;}
