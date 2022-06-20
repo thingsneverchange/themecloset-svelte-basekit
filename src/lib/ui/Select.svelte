@@ -1,6 +1,5 @@
 <script type="ts">
-//import Icon from '$lib/ui/Icon.svelte'
-import { Wrapper, Spacer, Paragraph, Button, Link, FlexBox, Icon, Border, Arrow, Image, Price } from '@themecloset/svelte-basekit/ui'
+import Icon from '$lib/ui/Icon.svelte'
 import { createEventDispatcher } from 'svelte';
 import { onMount } from 'svelte';
 import { find, uniqBy } from 'lodash-es'
@@ -12,6 +11,7 @@ interface selectInput{
 
 export let options : selectInput[];
 export let value : number | string;
+export let name : string = null;
 export let placeholder : string = 'Select Option'
 export let chooseFirstDefault: boolean = false
 export let valueNameIdentifier: string = 'value'
@@ -71,8 +71,11 @@ onMount( () => {
   {/each}
 </select>
 
-<div class="select disabledSelection" style="opacity:{options.length == 0 ? '0.5' : '1'}">
+<div class="select-name">
+	<p>{name}</p>
+</div>
 
+<div class="select disabledSelection" style="opacity:{options.length == 0 ? '0.5' : '1'}">
   <div class="title">
     <div class="placeholder" on:click="{toggle}">
       {placeholderInternal}
@@ -108,6 +111,7 @@ onMount( () => {
 
 <style>
 *{box-sizing: border-box;line-height:100%;}
+.select-name{padding:10px 5px;font-size:12px;opacity:0.7}
 .select .placeholder{width:calc(100% - 20px);padding:10px 15px;}
 .select .arrow{padding-right:10px;}
 .select::selection, .select *::selection { background: transparent;color:inherit}
