@@ -23,7 +23,7 @@ export let showLoading : boolean  = false;
 export let alignLeft : boolean = false
 export let width : number = 0
 export let circled : boolean = false;
-export let border : string = "";
+export let withBorder : boolean = false;
 
 const dispatch = createEventDispatcher();
 let style = {
@@ -34,8 +34,8 @@ let style = {
   'text-align': alignLeft ? 'left' : 'center'
 }
 
-if(border != ''){
-  style['border'] = border
+if(withBorder != ''){
+  style['border'] = `2px solid ${color}`
 }
 if(color != ''){
   style['color'] = color
