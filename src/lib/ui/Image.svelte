@@ -10,7 +10,7 @@ const loadImage = (url: string): Promise<HTMLImageElement> => {
     image.addEventListener('load', () => {
 
       resolve(image);
-    });
+    }); 
     image.src = url;
   });
 }
