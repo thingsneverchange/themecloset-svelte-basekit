@@ -75,6 +75,14 @@ onMount( () => {
     <div class="placeholder" on:click="{toggle}">
       {placeholderInternal}
     </div>
+
+    {#if value}
+      <div class="placeholder" on:click="{() => {
+        value = null
+      }}">
+        {placeholder}
+      </div>
+    {/if}
     <div class="arrow" on:click="{close}">
       {#if value}
         <Icon name="close" width="{10}" height="{10}" color="#222" />
