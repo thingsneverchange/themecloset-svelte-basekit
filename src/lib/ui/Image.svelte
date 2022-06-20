@@ -32,12 +32,12 @@ let widthValue : number = fileWidth
 let computedURL : string;
 let isLoaded : 'unload' | 'onload' | 'loaded' = 'unload';
 let isFixedSize : boolean = width != 'auto' && height != 'auto' ? true : false
-let applySizeElement : string = width && height ? `width:${width == 'auto' ? 'auto': width + 'px'};height:${height == 'auto' ? 'auto': height + 'px'}` : ''
+let applySizeElement : string = width && height ? `width:${width == 'auto' ? 'auto': width };height:${height == 'auto' ? 'auto': height}` : ''
 let orientation : string;
 
 if(src){
 
-  computedURL = cdnDisabled ? src : `${cdnURL}${src}${src.includes('?') ? '&' : '?'}width=${widthValue.toString()}&format=auto&q=${quality}`
+  computedURL = cdnDisabled ? src : `${cdnURL}${src}${src.includes('?') ? '&' : '?'}width=${widthValue.toString().replace('%', '').replace('px', '')}&format=auto&q=${quality}`
 
 }
 
