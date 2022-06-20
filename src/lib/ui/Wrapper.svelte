@@ -31,6 +31,7 @@ export { classNames as class }
             text-align:{align};
             width:100%;
             display: {display};
+            { display == 'inline-block': 'vertical-align:top': ''},
             {fixed ? 'position:fixed;': ''}
             {fixed ? 'top:' + top + 'px;': '' }
             {fixed ? 'left:' + left + 'px;': '' }
