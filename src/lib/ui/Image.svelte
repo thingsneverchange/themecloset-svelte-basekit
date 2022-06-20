@@ -26,9 +26,7 @@ export let preload : boolean = false;
 export let onload : Function = null;
 export let circled : boolean = false;
 export let rounded: boolean = false;
-export let imageColor : ColorObject = {
-  r: 174, g: 174, b: 174
-} as ColorObject
+export let imageColor : ColorObject = {} as ColorObject
 export let cdnURL : string = ''
 let widthValue : number = fileWidth
 let computedURL : string;

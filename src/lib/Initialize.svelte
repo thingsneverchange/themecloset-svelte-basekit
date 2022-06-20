@@ -11,10 +11,6 @@ import Notification from '$lib/ui/Notification.svelte'
 import FullLoading from '$lib/ui/FullLoading.svelte'
 import Prompt from '$lib/ui/Prompt.svelte'
 
-store.update((data) => {
-  data.theme = theme
-  return data
-})
 if(theme == 'dark'){
   backgroundColor = '#222'
 }
