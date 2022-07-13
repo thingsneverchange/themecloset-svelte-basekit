@@ -20,7 +20,7 @@ export let borderRight: string = '';
 export let borderTop: string = '';
 export let display: string = 'block';
 export let style: string = '';
-export let element : HTMLElement;
+export let element : HTMLElement = null;
 
 let classNames : string = '';
 export { classNames as class }

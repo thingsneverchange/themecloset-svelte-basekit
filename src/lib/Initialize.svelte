@@ -10,9 +10,13 @@ import './assets/css/reset.css'
 import Notification from '$lib/ui/Notification.svelte'
 import FullLoading from '$lib/ui/FullLoading.svelte'
 import Prompt from '$lib/ui/Prompt.svelte'
+import { isArray } from 'lodash-es'
 
 if(theme == 'dark'){
   backgroundColor = '#222'
+}
+if(isArray(fontFamily)){
+  fontFamily = fontFamily.map(d => `'${d}'`).join(',');
 }
 </script>
 <svelte:head>
