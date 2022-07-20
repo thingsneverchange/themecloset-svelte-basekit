@@ -11,6 +11,7 @@ export let fixed: boolean = false;
 export let top: number = 0;
 export let left: number = 0;
 export let maxWidth: string = 'auto';
+export let width: string = '100%';
 export let center: boolean = false;
 export let backgroundColor: string = 'initial';
 export let rounded: boolean = false;
@@ -29,7 +30,7 @@ export { classNames as class }
 
 <div class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
-            width:100%;
+            width:{width};
             display: {display};
             { display == 'inline-block'? 'vertical-align:top;': ''}
             {fixed ? 'position:fixed;': ''}
