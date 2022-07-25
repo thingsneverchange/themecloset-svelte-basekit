@@ -1,5 +1,4 @@
 <script type="ts">
-/* @vite-ignore */
 
 export let name : string = '';
 export let width : number  = 15;
@@ -14,6 +13,7 @@ if(color == null){
 }
 
 import(`./images/${name}.svg?raw`).then( (module) => {
+  /* @vite-ignore */
   if(!module){
     iconSvg = ''
   }else{
