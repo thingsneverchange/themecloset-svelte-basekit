@@ -31,6 +31,7 @@ export { classNames as class }
 <div class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:{width};
+            position:relative;
             display: {display};
             { display == 'inline-block'? 'vertical-align:top;': ''}
             {fixed ? 'position:fixed;': ''}
