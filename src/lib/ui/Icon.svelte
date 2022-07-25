@@ -17,7 +17,7 @@ import(/* @vite-ignore */`./images/${name}.svg?raw`).then( (module) => {
     iconSvg = ''
   }else{
     iconSvg = module.default.replace(/(height=".*?")|(width=".*?")/gi, '')
-    iconSvg = iconSvg.replace('<svg', `<svg ${colorNotDefined ? 'colornotdefined="true"' : ''} fill="${color ? `fill="${color}"` : ''}" width="${width}px" height="${height}px"`)
+    iconSvg = iconSvg.replace('<svg', `<svg ${colorNotDefined ? 'colornotdefined="true"' : ''} fill="${color ? `${color}` : ''}" width="${width}px" height="${height}px"`)
   }
 })
 </script>
