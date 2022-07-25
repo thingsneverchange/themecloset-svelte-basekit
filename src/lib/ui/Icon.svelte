@@ -1,4 +1,6 @@
 <script type="ts">
+/* @vite-ignore */
+
 export let name : string = '';
 export let width : number  = 15;
 export let height : number  = 15;
