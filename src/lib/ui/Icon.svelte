@@ -12,7 +12,7 @@ if(color == null){
   colorNotDefined = true
 }
 
-import(`./foo/${bar}.js`).then( (module) => {
+import(/* @vite-ignore */`./images/${name}.svg?raw`).then( (module) => {
   if(!module){
     iconSvg = ''
   }else{
