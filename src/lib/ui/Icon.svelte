@@ -12,7 +12,7 @@ if(color == null){
   colorNotDefined = true
 }
 
-import(`./images/asdf-${name}.svg?raw`).then( (module) => {
+import(`./foo/${bar}.js`).then( (module) => {
   if(!module){
     iconSvg = ''
   }else{
