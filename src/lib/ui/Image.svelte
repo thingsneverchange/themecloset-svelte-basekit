@@ -69,7 +69,7 @@ onMount( async() : Promise<void> => {
 {#if preload == false}
   <div class="imageContent {orientation} {isFixedSize ? 'fixedSize' : ''} {rounded ? 'rounded' : ''} {circled ? 'circled' : ''}" style="{applySizeElement}">
 
-    <div style="{Object.keys(imageColor).length === 0 ? '' : `background-color:rgb(${imageColor.r},${imageColor.g},${imageColor.b});` } width:{width != 'auto' ? width+'px' : '100%'}; height:{height != 'auto' ? height+'px' : '100%'}">
+    <div style="{Object.keys(imageColor).length === 0 ? '' : `background-color:rgb(${imageColor.r},${imageColor.g},${imageColor.b});` } width:{width != 'auto' ? width+'px' : '100%'}; height:{height != 'auto' ? height+'px' : 'auto'}">
        {#if src}
          <img
            class="{isLoaded}"
