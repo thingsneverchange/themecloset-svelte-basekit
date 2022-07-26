@@ -1,4 +1,6 @@
 <script type="ts">
+import { createEventDispatcher } from 'svelte';
+
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
 export let spacingTop: number = 0;
@@ -25,10 +27,24 @@ export let element : HTMLElement = null;
 
 let classNames : string = '';
 export { classNames as class }
+const dispatch = createEventDispatcher();
 
 </script>
 
-<div class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
+<div
+on:click="{( () => {
+   dispatch('click')
+})}"
+on:mouseleave="{( () => {
+   dispatch('mouseleave')
+})}"
+on:mouseenter="{( () => {
+   dispatch('mouseenter')
+})}"
+on:hover="{( () => {
+   dispatch('hover')
+})}"
+class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:{width};
             position:relative;
