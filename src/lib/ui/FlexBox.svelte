@@ -9,7 +9,7 @@ let classNames : string = '';
 export { classNames as class }
 
 
-const dispatch = createEventDispatcher();
+const dispatch = createEventDispatcher(); 
 const makeClick = () :void => {
   dispatch('click')
 }
