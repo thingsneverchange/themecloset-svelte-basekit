@@ -22,13 +22,27 @@ export let borderTop: string = '';
 export let display: string = 'block';
 export let style: string = '';
 export let element : HTMLElement = null;
+const dispatch = createEventDispatcher();
 
 let classNames : string = '';
 export { classNames as class }
 
 </script>
 
-<div class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
+<div
+on:mouseenter="{( () => {
+  dispatch('mouseenter')
+})}"
+on:click="{( () => {
+  dispatch('click')
+})}"
+on:mouseleave="{( () => {
+  dispatch('mouseleave')
+})}"
+on:hover="{( () => {
+  dispatch('hover')
+})}"
+class="{classNames ? classNames : ''}" bind:this="{element}" style="padding:{spacingHorizontal}px {spacing}px;
             text-align:{align};
             width:{width};
             position:relative;
