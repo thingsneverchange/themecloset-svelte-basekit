@@ -1,4 +1,5 @@
 <script type="ts">
+import { createEventDispatcher } from 'svelte';
 export let spacing: number = 0
 export let spacingHorizontal: number = 0
 export let spacingTop: number = 0;
