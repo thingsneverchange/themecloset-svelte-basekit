@@ -42,6 +42,7 @@ let fontSize: string = size.toString() + 'px'
   .isContent{line-height:190%}
   *{box-sizing:border-box;margin:0px;padding:0px;word-break: break-all;
     white-space: normal;
+    line-height:normal;
 }
   .faded{opacity:0.7}
   .capitalize{text-transform: capitalize;}
