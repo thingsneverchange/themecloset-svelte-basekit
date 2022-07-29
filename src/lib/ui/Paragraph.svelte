@@ -12,6 +12,7 @@ export let align : string = 'left'
 export let bold : boolean = false
 export let fontFamily: string = 'inherit'
 export let isContent: boolean = false
+export let lineHeight: string = 'normal'
 
 
 size = parseInt(size)
@@ -33,7 +34,7 @@ let fontSize: string = size.toString() + 'px'
 {#key $store.theme}
   <svelte:element
     this="{as}" class="{isContent ? 'isContent': ''} paragraph {faded ? 'faded': ''} {capitalize ? 'capitalize' : ''}"
-    style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacingHorizontal}px {spacing}px;color:{color};text-align:{align}">
+    style="{bold ? 'font-weight:600;': ''}font-family:{fontFamily}; font-size: {fontSize};margin:{spacingHorizontal}px {spacing}px;color:{color};text-align:{align}; line-height: {lineHeight}">
     <slot/>
   </svelte:element>
 {/key}
@@ -42,7 +43,6 @@ let fontSize: string = size.toString() + 'px'
   .isContent{line-height:190%}
   *{box-sizing:border-box;margin:0px;padding:0px;word-break: break-all;
     white-space: normal;
-    line-height:normal;
 }
   .faded{opacity:0.7}
   .capitalize{text-transform: capitalize;}
